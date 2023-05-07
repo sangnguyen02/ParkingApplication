@@ -52,11 +52,11 @@ namespace FinalWindow
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(228, 110);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 48);
+            this.label1.Size = new System.Drawing.Size(180, 57);
             this.label1.TabIndex = 23;
             this.label1.Text = "Sign Up";
             // 
@@ -79,7 +79,7 @@ namespace FinalWindow
             // 
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(254, 12);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(265, 12);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox1.Size = new System.Drawing.Size(113, 95);
@@ -120,16 +120,18 @@ namespace FinalWindow
             this.textBox_lastName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_lastName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_lastName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_lastName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_lastName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_lastName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_lastName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_lastName.Location = new System.Drawing.Point(335, 101);
             this.textBox_lastName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_lastName.Name = "textBox_lastName";
             this.textBox_lastName.PasswordChar = '\0';
-            this.textBox_lastName.PlaceholderText = "";
+            this.textBox_lastName.PlaceholderText = "Last Name";
             this.textBox_lastName.SelectedText = "";
             this.textBox_lastName.Size = new System.Drawing.Size(182, 48);
-            this.textBox_lastName.TabIndex = 29;
+            this.textBox_lastName.TabIndex = 4;
+            this.textBox_lastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_lastName_KeyPress);
             // 
             // textBox_firstName
             // 
@@ -143,16 +145,18 @@ namespace FinalWindow
             this.textBox_firstName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_firstName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_firstName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_firstName.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_firstName.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_firstName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_firstName.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_firstName.Location = new System.Drawing.Point(335, 32);
             this.textBox_firstName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_firstName.Name = "textBox_firstName";
             this.textBox_firstName.PasswordChar = '\0';
-            this.textBox_firstName.PlaceholderText = "";
+            this.textBox_firstName.PlaceholderText = "First Name";
             this.textBox_firstName.SelectedText = "";
             this.textBox_firstName.Size = new System.Drawing.Size(182, 48);
-            this.textBox_firstName.TabIndex = 27;
+            this.textBox_firstName.TabIndex = 2;
+            this.textBox_firstName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_firstName_KeyPress);
             // 
             // guna2CirclePictureBox4
             // 
@@ -179,16 +183,17 @@ namespace FinalWindow
             this.textBox_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_email.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_email.Location = new System.Drawing.Point(80, 173);
             this.textBox_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.PasswordChar = '\0';
-            this.textBox_email.PlaceholderText = "";
+            this.textBox_email.PlaceholderText = "Type your Email";
             this.textBox_email.SelectedText = "";
             this.textBox_email.Size = new System.Drawing.Size(437, 48);
-            this.textBox_email.TabIndex = 30;
+            this.textBox_email.TabIndex = 5;
             // 
             // guna2CirclePictureBox3
             // 
@@ -228,16 +233,17 @@ namespace FinalWindow
             this.textBox_Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_Username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_Username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Username.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_Username.Location = new System.Drawing.Point(80, 32);
             this.textBox_Username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.PasswordChar = '\0';
-            this.textBox_Username.PlaceholderText = "";
+            this.textBox_Username.PlaceholderText = "Type your Username";
             this.textBox_Username.SelectedText = "";
             this.textBox_Username.Size = new System.Drawing.Size(249, 48);
-            this.textBox_Username.TabIndex = 26;
+            this.textBox_Username.TabIndex = 1;
             // 
             // textBox_Password
             // 
@@ -251,23 +257,24 @@ namespace FinalWindow
             this.textBox_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_Password.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_Password.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_Password.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_Password.Location = new System.Drawing.Point(80, 101);
             this.textBox_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Password.Name = "textBox_Password";
-            this.textBox_Password.PasswordChar = '\0';
-            this.textBox_Password.PlaceholderText = "";
+            this.textBox_Password.PasswordChar = '*';
+            this.textBox_Password.PlaceholderText = "Type your Password";
             this.textBox_Password.SelectedText = "";
             this.textBox_Password.Size = new System.Drawing.Size(249, 48);
-            this.textBox_Password.TabIndex = 28;
+            this.textBox_Password.TabIndex = 3;
             // 
             // SignUpForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(643, 597);
+            this.ClientSize = new System.Drawing.Size(632, 597);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_SignUp);

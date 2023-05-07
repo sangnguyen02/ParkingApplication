@@ -16,19 +16,12 @@ namespace FinalWindow
         {
             InitializeComponent();
         }
+        Color panLoginColor;
+
 
         private void LoginForm_Load(object sender, EventArgs e)
         {
-            if(textBox_Username.Text == "")
-            {
-                textBox_Username.PlaceholderText = "Type your Username";
-                textBox_Username.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
-            if(textBox_Password.Text == "")
-            {
-                textBox_Password.PlaceholderText = "Type your Password";
-                textBox_Password.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
+            
         }
 
         private void label_createAccount_Click(object sender, EventArgs e)
@@ -41,6 +34,12 @@ namespace FinalWindow
         {
             FindAccountForm findAccountForm = new FindAccountForm();
             findAccountForm.Show();
+        }
+
+        private void button_Login_Click(object sender, EventArgs e)
+        {
+            CustomerMainForm customerMainForm = new CustomerMainForm();
+            customerMainForm.Show();
         }
     }
 }

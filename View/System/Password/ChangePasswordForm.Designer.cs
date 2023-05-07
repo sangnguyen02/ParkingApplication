@@ -32,9 +32,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.button_confirm = new Guna.UI2.WinForms.Guna2Button();
             this.textBox_confirmPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_Password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button_confirm = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -42,11 +42,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(158, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(337, 48);
+            this.label1.Size = new System.Drawing.Size(329, 57);
             this.label1.TabIndex = 24;
             this.label1.Text = "Reset Password";
             // 
@@ -77,21 +77,6 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(403, 208);
             this.guna2GroupBox1.TabIndex = 26;
             // 
-            // button_confirm
-            // 
-            this.button_confirm.BorderRadius = 20;
-            this.button_confirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_confirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_confirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_confirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_confirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_confirm.ForeColor = System.Drawing.Color.White;
-            this.button_confirm.Location = new System.Drawing.Point(135, 383);
-            this.button_confirm.Name = "button_confirm";
-            this.button_confirm.Size = new System.Drawing.Size(249, 45);
-            this.button_confirm.TabIndex = 6;
-            this.button_confirm.Text = "Confirm";
-            // 
             // textBox_confirmPassword
             // 
             this.textBox_confirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -104,16 +89,17 @@
             this.textBox_confirmPassword.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_confirmPassword.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_confirmPassword.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_confirmPassword.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_confirmPassword.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_confirmPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_confirmPassword.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_confirmPassword.Location = new System.Drawing.Point(77, 109);
             this.textBox_confirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_confirmPassword.Name = "textBox_confirmPassword";
             this.textBox_confirmPassword.PasswordChar = '*';
-            this.textBox_confirmPassword.PlaceholderText = "";
+            this.textBox_confirmPassword.PlaceholderText = "Confirm your Password";
             this.textBox_confirmPassword.SelectedText = "";
             this.textBox_confirmPassword.Size = new System.Drawing.Size(249, 48);
-            this.textBox_confirmPassword.TabIndex = 5;
+            this.textBox_confirmPassword.TabIndex = 2;
             // 
             // textBox_Password
             // 
@@ -127,23 +113,39 @@
             this.textBox_Password.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Password.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Password.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_Password.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_Password.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_Password.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_Password.Location = new System.Drawing.Point(77, 44);
             this.textBox_Password.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Password.Name = "textBox_Password";
             this.textBox_Password.PasswordChar = '*';
-            this.textBox_Password.PlaceholderText = "";
+            this.textBox_Password.PlaceholderText = "Type your new Password";
             this.textBox_Password.SelectedText = "";
             this.textBox_Password.Size = new System.Drawing.Size(249, 48);
-            this.textBox_Password.TabIndex = 4;
+            this.textBox_Password.TabIndex = 1;
+            // 
+            // button_confirm
+            // 
+            this.button_confirm.BorderRadius = 20;
+            this.button_confirm.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_confirm.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_confirm.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_confirm.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_confirm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_confirm.ForeColor = System.Drawing.Color.White;
+            this.button_confirm.Location = new System.Drawing.Point(135, 360);
+            this.button_confirm.Name = "button_confirm";
+            this.button_confirm.Size = new System.Drawing.Size(249, 45);
+            this.button_confirm.TabIndex = 3;
+            this.button_confirm.Text = "Confirm";
             // 
             // ChangePasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(517, 472);
+            this.ClientSize = new System.Drawing.Size(517, 433);
             this.Controls.Add(this.button_confirm);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.guna2CirclePictureBox1);

@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FinalWindow
+namespace FinalWindow.View.Customer
 {
-    public partial class ChangePasswordForm : Form
+    public partial class EditInformationForm : Form
     {
-        public ChangePasswordForm()
+        public EditInformationForm()
         {
             InitializeComponent();
-        }
-
-        private void ChangePasswordForm_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -81,11 +81,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(189, 53);
+            this.label1.Location = new System.Drawing.Point(147, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(373, 48);
+            this.label1.Size = new System.Drawing.Size(387, 57);
             this.label1.TabIndex = 30;
             this.label1.Text = "Find your Account";
             // 
@@ -101,7 +101,7 @@
             this.button_verify.Location = new System.Drawing.Point(505, 355);
             this.button_verify.Name = "button_verify";
             this.button_verify.Size = new System.Drawing.Size(141, 48);
-            this.button_verify.TabIndex = 33;
+            this.button_verify.TabIndex = 6;
             this.button_verify.Text = "Verify";
             this.button_verify.Click += new System.EventHandler(this.button_verify_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.guna2CirclePictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox3.Image")));
             this.guna2CirclePictureBox3.ImageRotate = 0F;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(70, 32);
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(28, 34);
             this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
             this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             this.guna2CirclePictureBox3.Size = new System.Drawing.Size(113, 95);
@@ -161,16 +161,17 @@
             this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.guna2TextBox1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2TextBox1.Location = new System.Drawing.Point(97, 196);
             this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
+            this.guna2TextBox1.PlaceholderText = "Type your OTP code";
             this.guna2TextBox1.SelectedText = "";
             this.guna2TextBox1.Size = new System.Drawing.Size(267, 48);
-            this.guna2TextBox1.TabIndex = 37;
+            this.guna2TextBox1.TabIndex = 5;
             // 
             // guna2CirclePictureBox4
             // 
@@ -197,16 +198,17 @@
             this.textBox_email.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_email.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_email.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_email.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_email.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_email.Location = new System.Drawing.Point(97, 122);
             this.textBox_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_email.Name = "textBox_email";
             this.textBox_email.PasswordChar = '\0';
-            this.textBox_email.PlaceholderText = "";
+            this.textBox_email.PlaceholderText = "Your email";
             this.textBox_email.SelectedText = "";
             this.textBox_email.Size = new System.Drawing.Size(267, 48);
-            this.textBox_email.TabIndex = 34;
+            this.textBox_email.TabIndex = 3;
             // 
             // guna2CirclePictureBox2
             // 
@@ -233,16 +235,17 @@
             this.textBox_Username.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Username.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.textBox_Username.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_Username.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.textBox_Username.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_Username.ForeColor = System.Drawing.SystemColors.ControlText;
             this.textBox_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.textBox_Username.Location = new System.Drawing.Point(97, 48);
             this.textBox_Username.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.textBox_Username.Name = "textBox_Username";
             this.textBox_Username.PasswordChar = '\0';
-            this.textBox_Username.PlaceholderText = "";
+            this.textBox_Username.PlaceholderText = "Type your Username";
             this.textBox_Username.SelectedText = "";
             this.textBox_Username.Size = new System.Drawing.Size(267, 48);
-            this.textBox_Username.TabIndex = 33;
+            this.textBox_Username.TabIndex = 1;
             // 
             // FindAccountForm
             // 

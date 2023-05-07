@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalWindow.View.Customer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace FinalWindow
         public CustomerMainForm()
         {
             InitializeComponent();
+        }
+
+        private void button_editInformation_Click(object sender, EventArgs e)
+        {
+            CustomerEditInformationForm editInformationForm = new CustomerEditInformationForm();
+            editInformationForm.Show();
+        }
+
+        private void CustomerMainForm_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }

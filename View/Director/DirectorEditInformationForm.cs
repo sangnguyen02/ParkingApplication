@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FinalWindow
+namespace FinalWindow.View.Director
 {
-    public partial class ChangePasswordForm : Form
+    public partial class DirectorEditInformationForm : Form
     {
-        public ChangePasswordForm()
+        public DirectorEditInformationForm()
         {
             InitializeComponent();
-        }
-
-        private void ChangePasswordForm_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }

@@ -67,6 +67,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="View\Customer\EditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Customer\EditInformationForm.Designer.cs">
+      <DependentUpon>EditInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\System\Password\ChangePasswordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,12 @@
     <Compile Include="Model\WeekKeepContract.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="View\Customer\CustomerMainForm.resx">
+      <DependentUpon>CustomerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Customer\EditInformationForm.resx">
+      <DependentUpon>EditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\System\Password\ChangePasswordForm.resx">
       <DependentUpon>ChangePasswordForm.cs</DependentUpon>
     </EmbeddedResource>

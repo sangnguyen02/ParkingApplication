@@ -19,32 +19,26 @@ namespace FinalWindow
 
         private void SignUpForm_Load(object sender, EventArgs e)
         {
-            if (textBox_Username.Text == "")
-            {
-                textBox_Username.PlaceholderText = "Type your Username";
-                textBox_Username.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
-            if (textBox_Password.Text == "")
-            {
-                textBox_Password.PlaceholderText = "Type your Password";
-                textBox_Password.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
-            if(textBox_firstName.Text == "")
-            {
-                textBox_firstName.PlaceholderText = "Type your First Name";
-                textBox_firstName.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
-            if (textBox_lastName.Text == "")
-            {
-                textBox_lastName.PlaceholderText = "Type your Last Name";
-                textBox_lastName.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
-            if (textBox_email.Text == "")
-            {
-                textBox_email.PlaceholderText = "Type your Email";
-                textBox_email.PlaceholderForeColor = System.Drawing.Color.Black;
-            }
+            
 
+        }
+
+        private void textBox_firstName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsLetter(ch) && ch != 8 && ch != 32)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox_lastName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!char.IsLetter(ch) && ch != 8 && ch != 32)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
