@@ -10,7 +10,7 @@ namespace FinalWindow.Database
 {
     internal class DatabaseContext : DbContext
     {
-        public DatabaseContext() : base("Data Source=LAPTOP-C9DUVST2\\SANG;Initial Catalog=Vehicle;Integrated Security=True")
+        public DatabaseContext() : base("Data Source=LAPTOP-C9DUVST2\\SANG;Initial Catalog=CarParking;Integrated Security=True")
         {
 
         }
@@ -18,6 +18,12 @@ namespace FinalWindow.Database
         public DbSet<Facility> Facilities { get; set; }
         public DbSet<BillFix> BillFixes { get; set; }
         public DbSet<Accessory> Accessories { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
+        public DbSet<Contract> Contracts { get; set; }
+
+        public DbSet<Vehicle> Vehicles { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

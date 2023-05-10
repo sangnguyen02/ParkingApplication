@@ -11,6 +11,7 @@ namespace FinalWindow.Model
     internal class Vehicle
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         public string name { get; set; }

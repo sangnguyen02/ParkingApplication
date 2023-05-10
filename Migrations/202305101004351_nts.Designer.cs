@@ -13,7 +13,7 @@ namespace FinalWindow.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202305060713562_nts"; }
+            get { return "202305101004351_nts"; }
         }
         
         string IMigrationMetadata.Source

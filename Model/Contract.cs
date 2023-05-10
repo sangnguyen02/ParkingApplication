@@ -11,6 +11,7 @@ namespace FinalWindow.Model
     internal abstract class Contract
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         /*public VehicleInContract vehicleInContract { get; set; }*/
