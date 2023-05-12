@@ -11,6 +11,7 @@ namespace FinalWindow.Model
     internal class User
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         public string username { get; set; }

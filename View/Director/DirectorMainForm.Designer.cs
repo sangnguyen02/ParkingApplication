@@ -48,12 +48,23 @@
             this.button_editInformation = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage_profile = new System.Windows.Forms.TabPage();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tabPage_statistic = new System.Windows.Forms.TabPage();
+            this.tabControl_director = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage_management = new System.Windows.Forms.TabPage();
+            this.button_resetData = new Guna.UI2.WinForms.Guna2Button();
+            this.button_addManager = new Guna.UI2.WinForms.Guna2Button();
+            this.dataGridView_listManager = new System.Windows.Forms.DataGridView();
+            this.tabPage_facility = new System.Windows.Forms.TabPage();
+            this.dataGridView_listFacility = new System.Windows.Forms.DataGridView();
+            this.button_resetFacility = new Guna.UI2.WinForms.Guna2Button();
+            this.button_addFacility = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.tabPage_profile.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
-            this.guna2TabControl1.SuspendLayout();
+            this.tabControl_director.SuspendLayout();
+            this.tabPage_management.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listManager)).BeginInit();
+            this.tabPage_facility.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listFacility)).BeginInit();
             this.SuspendLayout();
             // 
             // label_birthDate
@@ -264,7 +275,7 @@
             this.tabPage_profile.Location = new System.Drawing.Point(184, 4);
             this.tabPage_profile.Name = "tabPage_profile";
             this.tabPage_profile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_profile.Size = new System.Drawing.Size(731, 603);
+            this.tabPage_profile.Size = new System.Drawing.Size(845, 603);
             this.tabPage_profile.TabIndex = 0;
             this.tabPage_profile.Text = "Profile";
             // 
@@ -298,60 +309,167 @@
             this.guna2GroupBox1.Size = new System.Drawing.Size(710, 382);
             this.guna2GroupBox1.TabIndex = 0;
             // 
-            // guna2TabControl1
+            // tabControl_director
             // 
-            this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.guna2TabControl1.Controls.Add(this.tabPage_profile);
-            this.guna2TabControl1.Controls.Add(this.tabPage_statistic);
-            this.guna2TabControl1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.Location = new System.Drawing.Point(12, 12);
-            this.guna2TabControl1.Name = "guna2TabControl1";
-            this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(919, 611);
-            this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
-            this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
-            this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.guna2TabControl1.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
-            this.guna2TabControl1.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
-            this.guna2TabControl1.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
-            this.guna2TabControl1.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2TabControl1.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.guna2TabControl1.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
-            this.guna2TabControl1.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            this.guna2TabControl1.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
-            this.guna2TabControl1.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
-            this.guna2TabControl1.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.guna2TabControl1.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
-            this.guna2TabControl1.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
-            this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
-            this.guna2TabControl1.TabIndex = 3;
-            this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tabControl_director.Alignment = System.Windows.Forms.TabAlignment.Left;
+            this.tabControl_director.Controls.Add(this.tabPage_profile);
+            this.tabControl_director.Controls.Add(this.tabPage_management);
+            this.tabControl_director.Controls.Add(this.tabPage_facility);
+            this.tabControl_director.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl_director.ItemSize = new System.Drawing.Size(180, 40);
+            this.tabControl_director.Location = new System.Drawing.Point(12, 12);
+            this.tabControl_director.Name = "tabControl_director";
+            this.tabControl_director.SelectedIndex = 0;
+            this.tabControl_director.Size = new System.Drawing.Size(1033, 611);
+            this.tabControl_director.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
+            this.tabControl_director.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.tabControl_director.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabControl_director.TabButtonHoverState.ForeColor = System.Drawing.Color.White;
+            this.tabControl_director.TabButtonHoverState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
+            this.tabControl_director.TabButtonIdleState.BorderColor = System.Drawing.Color.Empty;
+            this.tabControl_director.TabButtonIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tabControl_director.TabButtonIdleState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabControl_director.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(160)))), ((int)(((byte)(167)))));
+            this.tabControl_director.TabButtonIdleState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
+            this.tabControl_director.TabButtonSelectedState.BorderColor = System.Drawing.Color.Empty;
+            this.tabControl_director.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(37)))), ((int)(((byte)(49)))));
+            this.tabControl_director.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.tabControl_director.TabButtonSelectedState.ForeColor = System.Drawing.Color.White;
+            this.tabControl_director.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(132)))), ((int)(((byte)(255)))));
+            this.tabControl_director.TabButtonSize = new System.Drawing.Size(180, 40);
+            this.tabControl_director.TabIndex = 3;
+            this.tabControl_director.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             // 
-            // tabPage_statistic
+            // tabPage_management
             // 
-            this.tabPage_statistic.Location = new System.Drawing.Point(184, 4);
-            this.tabPage_statistic.Name = "tabPage_statistic";
-            this.tabPage_statistic.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_statistic.Size = new System.Drawing.Size(731, 603);
-            this.tabPage_statistic.TabIndex = 1;
-            this.tabPage_statistic.Text = "Statistic";
-            this.tabPage_statistic.UseVisualStyleBackColor = true;
+            this.tabPage_management.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
+            this.tabPage_management.Controls.Add(this.button_resetData);
+            this.tabPage_management.Controls.Add(this.button_addManager);
+            this.tabPage_management.Controls.Add(this.dataGridView_listManager);
+            this.tabPage_management.Location = new System.Drawing.Point(184, 4);
+            this.tabPage_management.Name = "tabPage_management";
+            this.tabPage_management.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_management.Size = new System.Drawing.Size(845, 603);
+            this.tabPage_management.TabIndex = 1;
+            this.tabPage_management.Text = "Managers";
+            // 
+            // button_resetData
+            // 
+            this.button_resetData.BorderRadius = 20;
+            this.button_resetData.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_resetData.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_resetData.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_resetData.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_resetData.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_resetData.ForeColor = System.Drawing.Color.White;
+            this.button_resetData.Location = new System.Drawing.Point(18, 454);
+            this.button_resetData.Name = "button_resetData";
+            this.button_resetData.Size = new System.Drawing.Size(92, 47);
+            this.button_resetData.TabIndex = 3;
+            this.button_resetData.Text = "Reset";
+            this.button_resetData.Click += new System.EventHandler(this.button_resetData_Click);
+            // 
+            // button_addManager
+            // 
+            this.button_addManager.BorderRadius = 20;
+            this.button_addManager.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_addManager.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_addManager.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_addManager.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_addManager.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addManager.ForeColor = System.Drawing.Color.White;
+            this.button_addManager.Location = new System.Drawing.Point(18, 516);
+            this.button_addManager.Name = "button_addManager";
+            this.button_addManager.Size = new System.Drawing.Size(312, 47);
+            this.button_addManager.TabIndex = 2;
+            this.button_addManager.Text = "Add Manager";
+            this.button_addManager.Click += new System.EventHandler(this.button_addManager_Click);
+            // 
+            // dataGridView_listManager
+            // 
+            this.dataGridView_listManager.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_listManager.Location = new System.Drawing.Point(18, 23);
+            this.dataGridView_listManager.Name = "dataGridView_listManager";
+            this.dataGridView_listManager.RowHeadersWidth = 51;
+            this.dataGridView_listManager.RowTemplate.Height = 24;
+            this.dataGridView_listManager.Size = new System.Drawing.Size(749, 408);
+            this.dataGridView_listManager.TabIndex = 0;
+            // 
+            // tabPage_facility
+            // 
+            this.tabPage_facility.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
+            this.tabPage_facility.Controls.Add(this.button_resetFacility);
+            this.tabPage_facility.Controls.Add(this.button_addFacility);
+            this.tabPage_facility.Controls.Add(this.dataGridView_listFacility);
+            this.tabPage_facility.Location = new System.Drawing.Point(184, 4);
+            this.tabPage_facility.Name = "tabPage_facility";
+            this.tabPage_facility.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_facility.Size = new System.Drawing.Size(845, 603);
+            this.tabPage_facility.TabIndex = 2;
+            this.tabPage_facility.Text = "Facilities";
+            // 
+            // dataGridView_listFacility
+            // 
+            this.dataGridView_listFacility.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_listFacility.Location = new System.Drawing.Point(23, 22);
+            this.dataGridView_listFacility.Name = "dataGridView_listFacility";
+            this.dataGridView_listFacility.RowHeadersWidth = 51;
+            this.dataGridView_listFacility.RowTemplate.Height = 24;
+            this.dataGridView_listFacility.Size = new System.Drawing.Size(749, 408);
+            this.dataGridView_listFacility.TabIndex = 1;
+            this.dataGridView_listFacility.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_listFacility_CellContentClick);
+            // 
+            // button_resetFacility
+            // 
+            this.button_resetFacility.BorderRadius = 20;
+            this.button_resetFacility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_resetFacility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_resetFacility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_resetFacility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_resetFacility.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_resetFacility.ForeColor = System.Drawing.Color.White;
+            this.button_resetFacility.Location = new System.Drawing.Point(23, 447);
+            this.button_resetFacility.Name = "button_resetFacility";
+            this.button_resetFacility.Size = new System.Drawing.Size(92, 47);
+            this.button_resetFacility.TabIndex = 5;
+            this.button_resetFacility.Text = "Reset";
+            this.button_resetFacility.Click += new System.EventHandler(this.button_resetFacility_Click);
+            // 
+            // button_addFacility
+            // 
+            this.button_addFacility.BorderRadius = 20;
+            this.button_addFacility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_addFacility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_addFacility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_addFacility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_addFacility.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addFacility.ForeColor = System.Drawing.Color.White;
+            this.button_addFacility.Location = new System.Drawing.Point(23, 509);
+            this.button_addFacility.Name = "button_addFacility";
+            this.button_addFacility.Size = new System.Drawing.Size(312, 47);
+            this.button_addFacility.TabIndex = 4;
+            this.button_addFacility.Text = "Add Facility";
+            this.button_addFacility.Click += new System.EventHandler(this.button_addFacility_Click);
             // 
             // DirectorMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(942, 634);
-            this.Controls.Add(this.guna2TabControl1);
+            this.ClientSize = new System.Drawing.Size(1053, 634);
+            this.Controls.Add(this.tabControl_director);
             this.Name = "DirectorMainForm";
             this.Text = "DirectorMainForm";
+            this.Load += new System.EventHandler(this.DirectorMainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.tabPage_profile.ResumeLayout(false);
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
-            this.guna2TabControl1.ResumeLayout(false);
+            this.tabControl_director.ResumeLayout(false);
+            this.tabPage_management.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listManager)).EndInit();
+            this.tabPage_facility.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listFacility)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -378,7 +496,14 @@
         private Guna.UI2.WinForms.Guna2Button button_editInformation;
         private System.Windows.Forms.TabPage tabPage_profile;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
-        private System.Windows.Forms.TabPage tabPage_statistic;
+        private Guna.UI2.WinForms.Guna2TabControl tabControl_director;
+        private System.Windows.Forms.TabPage tabPage_management;
+        private System.Windows.Forms.TabPage tabPage_facility;
+        private System.Windows.Forms.DataGridView dataGridView_listManager;
+        private Guna.UI2.WinForms.Guna2Button button_addManager;
+        private Guna.UI2.WinForms.Guna2Button button_resetData;
+        private Guna.UI2.WinForms.Guna2Button button_resetFacility;
+        private Guna.UI2.WinForms.Guna2Button button_addFacility;
+        private System.Windows.Forms.DataGridView dataGridView_listFacility;
     }
 }

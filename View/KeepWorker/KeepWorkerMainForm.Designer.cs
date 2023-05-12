@@ -49,10 +49,16 @@
             this.tabPage_profile = new System.Windows.Forms.TabPage();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
+            this.tabPage_vehicle = new System.Windows.Forms.TabPage();
+            this.button_resetVehicle = new Guna.UI2.WinForms.Guna2Button();
+            this.button_addVehicle = new Guna.UI2.WinForms.Guna2Button();
+            this.dataGridView_listVehicle = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.tabPage_profile.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2TabControl1.SuspendLayout();
+            this.tabPage_vehicle.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listVehicle)).BeginInit();
             this.SuspendLayout();
             // 
             // label_birthDate
@@ -263,7 +269,7 @@
             this.tabPage_profile.Location = new System.Drawing.Point(184, 4);
             this.tabPage_profile.Name = "tabPage_profile";
             this.tabPage_profile.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_profile.Size = new System.Drawing.Size(731, 603);
+            this.tabPage_profile.Size = new System.Drawing.Size(848, 603);
             this.tabPage_profile.TabIndex = 0;
             this.tabPage_profile.Text = "Profile";
             // 
@@ -301,12 +307,13 @@
             // 
             this.guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left;
             this.guna2TabControl1.Controls.Add(this.tabPage_profile);
+            this.guna2TabControl1.Controls.Add(this.tabPage_vehicle);
             this.guna2TabControl1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TabControl1.ItemSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.Location = new System.Drawing.Point(12, 12);
             this.guna2TabControl1.Name = "guna2TabControl1";
             this.guna2TabControl1.SelectedIndex = 0;
-            this.guna2TabControl1.Size = new System.Drawing.Size(919, 611);
+            this.guna2TabControl1.Size = new System.Drawing.Size(1036, 611);
             this.guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty;
             this.guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(52)))), ((int)(((byte)(70)))));
             this.guna2TabControl1.TabButtonHoverState.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
@@ -326,12 +333,67 @@
             this.guna2TabControl1.TabIndex = 3;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
             // 
+            // tabPage_vehicle
+            // 
+            this.tabPage_vehicle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
+            this.tabPage_vehicle.Controls.Add(this.button_resetVehicle);
+            this.tabPage_vehicle.Controls.Add(this.button_addVehicle);
+            this.tabPage_vehicle.Controls.Add(this.dataGridView_listVehicle);
+            this.tabPage_vehicle.Location = new System.Drawing.Point(184, 4);
+            this.tabPage_vehicle.Name = "tabPage_vehicle";
+            this.tabPage_vehicle.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_vehicle.Size = new System.Drawing.Size(848, 603);
+            this.tabPage_vehicle.TabIndex = 1;
+            this.tabPage_vehicle.Text = "Vehicle";
+            // 
+            // button_resetVehicle
+            // 
+            this.button_resetVehicle.BorderRadius = 20;
+            this.button_resetVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_resetVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_resetVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_resetVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_resetVehicle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_resetVehicle.ForeColor = System.Drawing.Color.White;
+            this.button_resetVehicle.Location = new System.Drawing.Point(23, 459);
+            this.button_resetVehicle.Name = "button_resetVehicle";
+            this.button_resetVehicle.Size = new System.Drawing.Size(92, 47);
+            this.button_resetVehicle.TabIndex = 8;
+            this.button_resetVehicle.Text = "Reset";
+            this.button_resetVehicle.Click += new System.EventHandler(this.button_resetVehicle_Click);
+            // 
+            // button_addVehicle
+            // 
+            this.button_addVehicle.BorderRadius = 20;
+            this.button_addVehicle.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_addVehicle.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_addVehicle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_addVehicle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_addVehicle.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addVehicle.ForeColor = System.Drawing.Color.White;
+            this.button_addVehicle.Location = new System.Drawing.Point(23, 522);
+            this.button_addVehicle.Name = "button_addVehicle";
+            this.button_addVehicle.Size = new System.Drawing.Size(312, 47);
+            this.button_addVehicle.TabIndex = 7;
+            this.button_addVehicle.Text = "Add Vehicle";
+            this.button_addVehicle.Click += new System.EventHandler(this.button_addVehicle_Click);
+            // 
+            // dataGridView_listVehicle
+            // 
+            this.dataGridView_listVehicle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_listVehicle.Location = new System.Drawing.Point(23, 33);
+            this.dataGridView_listVehicle.Name = "dataGridView_listVehicle";
+            this.dataGridView_listVehicle.RowHeadersWidth = 51;
+            this.dataGridView_listVehicle.RowTemplate.Height = 24;
+            this.dataGridView_listVehicle.Size = new System.Drawing.Size(749, 408);
+            this.dataGridView_listVehicle.TabIndex = 6;
+            // 
             // KeepWorkerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(942, 634);
+            this.ClientSize = new System.Drawing.Size(1053, 634);
             this.Controls.Add(this.guna2TabControl1);
             this.Name = "KeepWorkerMainForm";
             this.Text = "KeepWorkerMainForm";
@@ -340,6 +402,8 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             this.guna2TabControl1.ResumeLayout(false);
+            this.tabPage_vehicle.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listVehicle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,5 +431,9 @@
         private System.Windows.Forms.TabPage tabPage_profile;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private Guna.UI2.WinForms.Guna2TabControl guna2TabControl1;
+        private System.Windows.Forms.TabPage tabPage_vehicle;
+        private Guna.UI2.WinForms.Guna2Button button_resetVehicle;
+        private Guna.UI2.WinForms.Guna2Button button_addVehicle;
+        private System.Windows.Forms.DataGridView dataGridView_listVehicle;
     }
 }
