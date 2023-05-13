@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class nts : DbMigration
+    public partial class ntt : DbMigration
     {
         public override void Up()
         {
@@ -47,6 +47,31 @@
                         email = c.String(),
                         birthday = c.DateTime(),
                         dateCreate = c.DateTime(),
+                        active = c.Boolean(nullable: false),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Vehicles",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        name = c.String(),
+                        branch = c.String(),
+                        picture = c.Binary(),
+                        status = c.String(),
+                        numberVehicle = c.String(),
+                        licensePlates = c.String(maxLength: 20),
+                    })
+                .PrimaryKey(t => t.ID);
+            
+            CreateTable(
+                "dbo.Rules",
+                c => new
+                    {
+                        ID = c.Int(nullable: false, identity: true),
+                        nameContract = c.String(),
+                        description = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -70,19 +95,6 @@
                         endTime = c.DateTime(nullable: false),
                         quantityKeep = c.Int(),
                         quantityFix = c.Int(),
-                    })
-                .PrimaryKey(t => t.ID);
-            
-            CreateTable(
-                "dbo.Vehicles",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        name = c.String(),
-                        branch = c.String(),
-                        picture = c.Binary(),
-                        status = c.String(),
-                        numberVehicle = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
             
@@ -113,6 +125,7 @@
                         email = c.String(),
                         birthday = c.DateTime(),
                         dateCreate = c.DateTime(),
+                        active = c.Boolean(nullable: false),
                         cardID = c.String(),
                         address = c.String(maxLength: 50),
                         picture = c.Binary(),
@@ -133,6 +146,7 @@
                         email = c.String(),
                         birthday = c.DateTime(),
                         dateCreate = c.DateTime(),
+                        active = c.Boolean(nullable: false),
                         cardID = c.String(),
                         address = c.String(),
                         picture = c.Binary(),
@@ -156,6 +170,7 @@
                         email = c.String(),
                         birthday = c.DateTime(),
                         dateCreate = c.DateTime(),
+                        active = c.Boolean(nullable: false),
                         address = c.String(),
                     })
                 .PrimaryKey(t => t.ID);
@@ -174,6 +189,7 @@
                         email = c.String(),
                         birthday = c.DateTime(),
                         dateCreate = c.DateTime(),
+                        active = c.Boolean(nullable: false),
                         cardID = c.String(),
                         address = c.String(),
                         picture = c.Binary(),
@@ -200,6 +216,7 @@
                         email = c.String(),
                         birthday = c.DateTime(),
                         dateCreate = c.DateTime(),
+                        active = c.Boolean(nullable: false),
                         cardID = c.String(),
                         address = c.String(),
                         picture = c.Binary(),
@@ -218,99 +235,103 @@
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        contractID = c.String(),
                         name = c.String(),
-                        key = c.String(maxLength: 50),
-                        description = c.String(),
-                        dateCreate = c.DateTime(),
-                        status = c.String(maxLength: 50),
-                        option = c.String(),
+                        key = c.String(),
+                        typeVehicle = c.String(),
+                        ruleID = c.Int(),
+                        dateStartActual = c.DateTime(),
+                        dateEnd = c.DateTime(),
+                        dateStart = c.DateTime(),
+                        dateEndActual = c.DateTime(),
+                        fee = c.Single(),
+                        penaltyFee = c.Single(),
                         customerID = c.Int(),
+                        carID = c.Int(),
+                        motorID = c.Int(),
+                        truckID = c.Int(),
+                        status = c.String(maxLength: 50),
                     })
                 .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Rules", t => t.ruleID)
                 .ForeignKey("dbo.Customers", t => t.customerID)
-                .Index(t => t.customerID);
-            
-            CreateTable(
-                "dbo.InstantKeepContracts",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        contractID = c.String(),
-                        name = c.String(),
-                        key = c.String(maxLength: 50),
-                        description = c.String(),
-                        dateCreate = c.DateTime(),
-                        status = c.String(maxLength: 50),
-                    })
-                .PrimaryKey(t => t.ID);
+                .ForeignKey("dbo.Cars", t => t.carID)
+                .ForeignKey("dbo.Motors", t => t.motorID)
+                .ForeignKey("dbo.Trucks", t => t.truckID)
+                .Index(t => t.ruleID)
+                .Index(t => t.customerID)
+                .Index(t => t.carID)
+                .Index(t => t.motorID)
+                .Index(t => t.truckID);
             
             CreateTable(
                 "dbo.LoanContracts",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        contractID = c.String(),
                         name = c.String(),
-                        key = c.String(maxLength: 50),
-                        description = c.String(),
-                        dateCreate = c.DateTime(),
-                        status = c.String(maxLength: 50),
-                        dateReturn = c.DateTime(),
+                        key = c.String(),
+                        typeVehicle = c.String(),
+                        ruleID = c.Int(),
+                        dateStartActual = c.DateTime(),
+                        dateEnd = c.DateTime(),
+                        dateStart = c.DateTime(),
+                        dateEndActual = c.DateTime(),
+                        fee = c.Single(),
+                        penaltyFee = c.Single(),
                         customerID = c.Int(),
+                        carID = c.Int(),
+                        motorID = c.Int(),
+                        truckID = c.Int(),
+                        status = c.String(maxLength: 50),
+                        condition = c.String(),
                     })
                 .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Rules", t => t.ruleID)
                 .ForeignKey("dbo.Customers", t => t.customerID)
-                .Index(t => t.customerID);
+                .ForeignKey("dbo.Cars", t => t.carID)
+                .ForeignKey("dbo.Motors", t => t.motorID)
+                .ForeignKey("dbo.Trucks", t => t.truckID)
+                .Index(t => t.ruleID)
+                .Index(t => t.customerID)
+                .Index(t => t.carID)
+                .Index(t => t.motorID)
+                .Index(t => t.truckID);
             
             CreateTable(
-                "dbo.MonthKeepContracts",
+                "dbo.LongTermKeepContracts",
                 c => new
                     {
                         ID = c.Int(nullable: false, identity: true),
-                        contractID = c.String(),
                         name = c.String(),
-                        key = c.String(maxLength: 50),
-                        description = c.String(),
-                        dateCreate = c.DateTime(),
+                        key = c.String(),
+                        typeVehicle = c.String(),
+                        ruleID = c.Int(),
+                        dateStartActual = c.DateTime(),
+                        dateEnd = c.DateTime(),
+                        dateStart = c.DateTime(),
+                        dateEndActual = c.DateTime(),
+                        fee = c.Single(),
+                        penaltyFee = c.Single(),
+                        customerID = c.Int(),
+                        carID = c.Int(),
+                        motorID = c.Int(),
+                        truckID = c.Int(),
                         status = c.String(maxLength: 50),
                         option = c.String(),
-                        customerID = c.Int(),
+                        type = c.String(),
+                        period = c.Single(nullable: false),
                     })
                 .PrimaryKey(t => t.ID)
+                .ForeignKey("dbo.Rules", t => t.ruleID)
                 .ForeignKey("dbo.Customers", t => t.customerID)
-                .Index(t => t.customerID);
-            
-            CreateTable(
-                "dbo.WeekKeepContracts",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        contractID = c.String(),
-                        name = c.String(),
-                        key = c.String(maxLength: 50),
-                        description = c.String(),
-                        dateCreate = c.DateTime(),
-                        status = c.String(maxLength: 50),
-                        option = c.String(),
-                        customerID = c.Int(),
-                    })
-                .PrimaryKey(t => t.ID)
-                .ForeignKey("dbo.Customers", t => t.customerID)
-                .Index(t => t.customerID);
-            
-            CreateTable(
-                "dbo.Bicycles",
-                c => new
-                    {
-                        ID = c.Int(nullable: false, identity: true),
-                        name = c.String(),
-                        branch = c.String(),
-                        picture = c.Binary(),
-                        status = c.String(),
-                        numberVehicle = c.String(),
-                    })
-                .PrimaryKey(t => t.ID);
+                .ForeignKey("dbo.Cars", t => t.carID)
+                .ForeignKey("dbo.Motors", t => t.motorID)
+                .ForeignKey("dbo.Trucks", t => t.truckID)
+                .Index(t => t.ruleID)
+                .Index(t => t.customerID)
+                .Index(t => t.carID)
+                .Index(t => t.motorID)
+                .Index(t => t.truckID);
             
             CreateTable(
                 "dbo.Cars",
@@ -360,10 +381,21 @@
         
         public override void Down()
         {
-            DropForeignKey("dbo.WeekKeepContracts", "customerID", "dbo.Customers");
-            DropForeignKey("dbo.MonthKeepContracts", "customerID", "dbo.Customers");
+            DropForeignKey("dbo.LongTermKeepContracts", "truckID", "dbo.Trucks");
+            DropForeignKey("dbo.LongTermKeepContracts", "motorID", "dbo.Motors");
+            DropForeignKey("dbo.LongTermKeepContracts", "carID", "dbo.Cars");
+            DropForeignKey("dbo.LongTermKeepContracts", "customerID", "dbo.Customers");
+            DropForeignKey("dbo.LongTermKeepContracts", "ruleID", "dbo.Rules");
+            DropForeignKey("dbo.LoanContracts", "truckID", "dbo.Trucks");
+            DropForeignKey("dbo.LoanContracts", "motorID", "dbo.Motors");
+            DropForeignKey("dbo.LoanContracts", "carID", "dbo.Cars");
             DropForeignKey("dbo.LoanContracts", "customerID", "dbo.Customers");
+            DropForeignKey("dbo.LoanContracts", "ruleID", "dbo.Rules");
+            DropForeignKey("dbo.DayKeepContracts", "truckID", "dbo.Trucks");
+            DropForeignKey("dbo.DayKeepContracts", "motorID", "dbo.Motors");
+            DropForeignKey("dbo.DayKeepContracts", "carID", "dbo.Cars");
             DropForeignKey("dbo.DayKeepContracts", "customerID", "dbo.Customers");
+            DropForeignKey("dbo.DayKeepContracts", "ruleID", "dbo.Rules");
             DropForeignKey("dbo.KeepWorkers", "facilityID", "dbo.Facilities");
             DropForeignKey("dbo.KeepWorkers", "shiftID", "dbo.Shifts");
             DropForeignKey("dbo.FixWorkers", "facilityID", "dbo.Facilities");
@@ -373,10 +405,21 @@
             DropForeignKey("dbo.BillFixes", "customerID", "dbo.Customers");
             DropForeignKey("dbo.BillFixAccessories", "Accessory_ID", "dbo.Accessories");
             DropForeignKey("dbo.BillFixAccessories", "BillFix_ID", "dbo.BillFixes");
-            DropIndex("dbo.WeekKeepContracts", new[] { "customerID" });
-            DropIndex("dbo.MonthKeepContracts", new[] { "customerID" });
+            DropIndex("dbo.LongTermKeepContracts", new[] { "truckID" });
+            DropIndex("dbo.LongTermKeepContracts", new[] { "motorID" });
+            DropIndex("dbo.LongTermKeepContracts", new[] { "carID" });
+            DropIndex("dbo.LongTermKeepContracts", new[] { "customerID" });
+            DropIndex("dbo.LongTermKeepContracts", new[] { "ruleID" });
+            DropIndex("dbo.LoanContracts", new[] { "truckID" });
+            DropIndex("dbo.LoanContracts", new[] { "motorID" });
+            DropIndex("dbo.LoanContracts", new[] { "carID" });
             DropIndex("dbo.LoanContracts", new[] { "customerID" });
+            DropIndex("dbo.LoanContracts", new[] { "ruleID" });
+            DropIndex("dbo.DayKeepContracts", new[] { "truckID" });
+            DropIndex("dbo.DayKeepContracts", new[] { "motorID" });
+            DropIndex("dbo.DayKeepContracts", new[] { "carID" });
             DropIndex("dbo.DayKeepContracts", new[] { "customerID" });
+            DropIndex("dbo.DayKeepContracts", new[] { "ruleID" });
             DropIndex("dbo.KeepWorkers", new[] { "facilityID" });
             DropIndex("dbo.KeepWorkers", new[] { "shiftID" });
             DropIndex("dbo.FixWorkers", new[] { "facilityID" });
@@ -389,11 +432,8 @@
             DropTable("dbo.Trucks");
             DropTable("dbo.Motors");
             DropTable("dbo.Cars");
-            DropTable("dbo.Bicycles");
-            DropTable("dbo.WeekKeepContracts");
-            DropTable("dbo.MonthKeepContracts");
+            DropTable("dbo.LongTermKeepContracts");
             DropTable("dbo.LoanContracts");
-            DropTable("dbo.InstantKeepContracts");
             DropTable("dbo.DayKeepContracts");
             DropTable("dbo.KeepWorkers");
             DropTable("dbo.FixWorkers");
@@ -401,9 +441,10 @@
             DropTable("dbo.Managers");
             DropTable("dbo.Directors");
             DropTable("dbo.BillFixAccessories");
-            DropTable("dbo.Vehicles");
             DropTable("dbo.Shifts");
             DropTable("dbo.Facilities");
+            DropTable("dbo.Rules");
+            DropTable("dbo.Vehicles");
             DropTable("dbo.Users");
             DropTable("dbo.BillFixes");
             DropTable("dbo.Accessories");

@@ -91,5 +91,10 @@ namespace FinalWindow.View.Director
         {
 
         }
+
+        private void AddFacilityForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

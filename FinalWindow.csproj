@@ -67,11 +67,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202305101004351_nts.cs" />
-    <Compile Include="Migrations\202305101004351_nts.designer.cs">
-      <DependentUpon>202305101004351_nts.cs</DependentUpon>
+    <Compile Include="Migrations\202305130634116_ntt.cs" />
+    <Compile Include="Migrations\202305130634116_ntt.designer.cs">
+      <DependentUpon>202305130634116_ntt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Rule.cs" />
     <Compile Include="Tool\CheckInput.cs" />
     <Compile Include="View\Customer\CustomerEditInformationForm.cs">
       <SubType>Form</SubType>
@@ -165,7 +166,6 @@
       <DependentUpon>DirectorMainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Accessory.cs" />
-    <Compile Include="Model\Bicycle.cs" />
     <Compile Include="Model\BillFix.cs" />
     <Compile Include="Model\Car.cs" />
     <Compile Include="Model\Contract.cs" />
@@ -174,21 +174,19 @@
     <Compile Include="Model\Director.cs" />
     <Compile Include="Model\Facility.cs" />
     <Compile Include="Model\FixWorker.cs" />
-    <Compile Include="Model\InstantKeepContract.cs" />
     <Compile Include="Model\KeepWorker.cs" />
     <Compile Include="Model\LoanContract.cs" />
     <Compile Include="Model\Manager.cs" />
-    <Compile Include="Model\MonthKeepContract.cs" />
+    <Compile Include="Model\LongTermKeepContract.cs" />
     <Compile Include="Model\Motor.cs" />
     <Compile Include="Model\Shift.cs" />
     <Compile Include="Model\Truck.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Model\Vehicle.cs" />
-    <Compile Include="Model\WeekKeepContract.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202305101004351_nts.resx">
-      <DependentUpon>202305101004351_nts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202305130634116_ntt.resx">
+      <DependentUpon>202305130634116_ntt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Customer\CustomerMainForm.resx">
       <DependentUpon>CustomerMainForm.cs</DependentUpon>

@@ -24,6 +24,9 @@ namespace FinalWindow.Model
 
         public string numberVehicle { get; set; }
 
+        [MaxLength(20)]
+        public string licensePlates { get; set; }
+
 
     }
 }
