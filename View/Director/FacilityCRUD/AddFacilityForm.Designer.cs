@@ -1,4 +1,4 @@
-﻿namespace FinalWindow.View.Director
+﻿namespace FinalWindow.View.Director.FacilityCRUD
 {
     partial class AddFacilityForm
     {
@@ -29,44 +29,28 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddFacilityForm));
-            this.button_add = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.textBox_facilityAddress = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_quantityKeep = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_quantityFix = new Guna.UI2.WinForms.Guna2TextBox();
+            this.textBox_facilityAddress = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button_addFacility = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button_add
-            // 
-            this.button_add.BorderRadius = 20;
-            this.button_add.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_add.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_add.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_add.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(82, 406);
-            this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(559, 45);
-            this.button_add.TabIndex = 46;
-            this.button_add.Text = "Add";
-            this.button_add.Click += new System.EventHandler(this.button_add_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 25.2F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.label1.Location = new System.Drawing.Point(192, 9);
+            this.label1.Location = new System.Drawing.Point(186, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(359, 57);
-            this.label1.TabIndex = 47;
+            this.label1.TabIndex = 54;
             this.label1.Text = "Add New Facility";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
@@ -97,36 +81,11 @@
             this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2GroupBox1.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(82, 129);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(88, 119);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(559, 247);
-            this.guna2GroupBox1.TabIndex = 45;
+            this.guna2GroupBox1.TabIndex = 53;
             this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
-            // 
-            // textBox_facilityAddress
-            // 
-            this.textBox_facilityAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_facilityAddress.BorderRadius = 20;
-            this.textBox_facilityAddress.BorderThickness = 0;
-            this.textBox_facilityAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox_facilityAddress.DefaultText = "";
-            this.textBox_facilityAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBox_facilityAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBox_facilityAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox_facilityAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox_facilityAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_facilityAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox_facilityAddress.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox_facilityAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_facilityAddress.Location = new System.Drawing.Point(108, 43);
-            this.textBox_facilityAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_facilityAddress.Name = "textBox_facilityAddress";
-            this.textBox_facilityAddress.PasswordChar = '\0';
-            this.textBox_facilityAddress.PlaceholderText = "Type facility Address";
-            this.textBox_facilityAddress.SelectedText = "";
-            this.textBox_facilityAddress.Size = new System.Drawing.Size(415, 48);
-            this.textBox_facilityAddress.TabIndex = 11;
-            this.textBox_facilityAddress.TextChanged += new System.EventHandler(this.textBox_facilityAddress_TextChanged);
             // 
             // textBox_quantityKeep
             // 
@@ -192,15 +151,56 @@
             this.textBox_quantityFix.TabIndex = 39;
             this.textBox_quantityFix.TextChanged += new System.EventHandler(this.textBox_quantityFix_TextChanged);
             // 
+            // textBox_facilityAddress
+            // 
+            this.textBox_facilityAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_facilityAddress.BorderRadius = 20;
+            this.textBox_facilityAddress.BorderThickness = 0;
+            this.textBox_facilityAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_facilityAddress.DefaultText = "";
+            this.textBox_facilityAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox_facilityAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox_facilityAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_facilityAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_facilityAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_facilityAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_facilityAddress.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBox_facilityAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_facilityAddress.Location = new System.Drawing.Point(108, 43);
+            this.textBox_facilityAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_facilityAddress.Name = "textBox_facilityAddress";
+            this.textBox_facilityAddress.PasswordChar = '\0';
+            this.textBox_facilityAddress.PlaceholderText = "Type facility Address";
+            this.textBox_facilityAddress.SelectedText = "";
+            this.textBox_facilityAddress.Size = new System.Drawing.Size(415, 48);
+            this.textBox_facilityAddress.TabIndex = 11;
+            this.textBox_facilityAddress.TextChanged += new System.EventHandler(this.textBox_facilityAddress_TextChanged);
+            // 
+            // button_addFacility
+            // 
+            this.button_addFacility.BorderRadius = 20;
+            this.button_addFacility.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_addFacility.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_addFacility.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_addFacility.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_addFacility.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addFacility.ForeColor = System.Drawing.Color.White;
+            this.button_addFacility.Location = new System.Drawing.Point(88, 390);
+            this.button_addFacility.Name = "button_addFacility";
+            this.button_addFacility.Size = new System.Drawing.Size(559, 45);
+            this.button_addFacility.TabIndex = 55;
+            this.button_addFacility.Text = "Add";
+            this.button_addFacility.Click += new System.EventHandler(this.button_addFacility_Click);
+            // 
             // AddFacilityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(722, 473);
-            this.Controls.Add(this.button_add);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.guna2GroupBox1);
+            this.Controls.Add(this.button_addFacility);
             this.Name = "AddFacilityForm";
             this.Text = "AddFacilityForm";
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
@@ -213,13 +213,13 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2Button button_add;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox5;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
-        private Guna.UI2.WinForms.Guna2TextBox textBox_facilityAddress;
         private Guna.UI2.WinForms.Guna2TextBox textBox_quantityKeep;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2TextBox textBox_quantityFix;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_facilityAddress;
+        private Guna.UI2.WinForms.Guna2Button button_addFacility;
     }
 }
