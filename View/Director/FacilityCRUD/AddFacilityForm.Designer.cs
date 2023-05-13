@@ -52,7 +52,6 @@
             this.label1.Size = new System.Drawing.Size(359, 57);
             this.label1.TabIndex = 54;
             this.label1.Text = "Add New Facility";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // guna2CirclePictureBox5
             // 
@@ -66,7 +65,6 @@
             this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox5.TabIndex = 38;
             this.guna2CirclePictureBox5.TabStop = false;
-            this.guna2CirclePictureBox5.Click += new System.EventHandler(this.guna2CirclePictureBox5_Click);
             // 
             // guna2GroupBox1
             // 
@@ -85,7 +83,6 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(559, 247);
             this.guna2GroupBox1.TabIndex = 53;
-            this.guna2GroupBox1.Click += new System.EventHandler(this.guna2GroupBox1_Click);
             // 
             // textBox_quantityKeep
             // 
@@ -110,7 +107,6 @@
             this.textBox_quantityKeep.SelectedText = "";
             this.textBox_quantityKeep.Size = new System.Drawing.Size(191, 48);
             this.textBox_quantityKeep.TabIndex = 40;
-            this.textBox_quantityKeep.TextChanged += new System.EventHandler(this.textBox_quantityKeep_TextChanged);
             // 
             // guna2CirclePictureBox2
             // 
@@ -124,7 +120,6 @@
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.guna2CirclePictureBox2.TabIndex = 41;
             this.guna2CirclePictureBox2.TabStop = false;
-            this.guna2CirclePictureBox2.Click += new System.EventHandler(this.guna2CirclePictureBox2_Click);
             // 
             // textBox_quantityFix
             // 
@@ -149,7 +144,6 @@
             this.textBox_quantityFix.SelectedText = "";
             this.textBox_quantityFix.Size = new System.Drawing.Size(191, 48);
             this.textBox_quantityFix.TabIndex = 39;
-            this.textBox_quantityFix.TextChanged += new System.EventHandler(this.textBox_quantityFix_TextChanged);
             // 
             // textBox_facilityAddress
             // 
@@ -174,7 +168,6 @@
             this.textBox_facilityAddress.SelectedText = "";
             this.textBox_facilityAddress.Size = new System.Drawing.Size(415, 48);
             this.textBox_facilityAddress.TabIndex = 11;
-            this.textBox_facilityAddress.TextChanged += new System.EventHandler(this.textBox_facilityAddress_TextChanged);
             // 
             // button_addFacility
             // 
@@ -203,6 +196,7 @@
             this.Controls.Add(this.button_addFacility);
             this.Name = "AddFacilityForm";
             this.Text = "AddFacilityForm";
+            this.Load += new System.EventHandler(this.AddFacilityForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();

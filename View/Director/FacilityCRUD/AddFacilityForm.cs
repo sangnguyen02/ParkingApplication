@@ -56,37 +56,7 @@ namespace FinalWindow.View.Director.FacilityCRUD
             { MessageBox.Show(ex.InnerException.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
-        private void guna2CirclePictureBox5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2GroupBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_quantityKeep_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void guna2CirclePictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_quantityFix_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_facilityAddress_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void AddFacilityForm_Load(object sender, EventArgs e)
         {
 
         }
