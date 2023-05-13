@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerEditInformationForm));
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.textBox_address = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_phone = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_lastName = new Guna.UI2.WinForms.Guna2TextBox();
@@ -38,17 +41,14 @@
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_firstName = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.guna2CirclePictureBox5 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.textBox_address = new Guna.UI2.WinForms.Guna2TextBox();
             this.button_edit = new Guna.UI2.WinForms.Guna2Button();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -74,6 +74,64 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(559, 390);
             this.guna2GroupBox1.TabIndex = 25;
+            // 
+            // guna2CirclePictureBox5
+            // 
+            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2CirclePictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox5.Image")));
+            this.guna2CirclePictureBox5.ImageRotate = 0F;
+            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(28, 304);
+            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
+            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(46, 48);
+            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox5.TabIndex = 38;
+            this.guna2CirclePictureBox5.TabStop = false;
+            // 
+            // textBox_address
+            // 
+            this.textBox_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_address.BorderRadius = 20;
+            this.textBox_address.BorderThickness = 0;
+            this.textBox_address.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_address.DefaultText = "";
+            this.textBox_address.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox_address.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox_address.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_address.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_address.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_address.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_address.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBox_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_address.Location = new System.Drawing.Point(80, 304);
+            this.textBox_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_address.Name = "textBox_address";
+            this.textBox_address.PasswordChar = '\0';
+            this.textBox_address.PlaceholderText = "Type your Address";
+            this.textBox_address.SelectedText = "";
+            this.textBox_address.Size = new System.Drawing.Size(437, 48);
+            this.textBox_address.TabIndex = 37;
+            // 
+            // guna2ComboBox1
+            // 
+            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.BorderRadius = 20;
+            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.guna2ComboBox1.ItemHeight = 30;
+            this.guna2ComboBox1.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.guna2ComboBox1.Location = new System.Drawing.Point(80, 101);
+            this.guna2ComboBox1.MaxDropDownItems = 2;
+            this.guna2ComboBox1.Name = "guna2ComboBox1";
+            this.guna2ComboBox1.Size = new System.Drawing.Size(191, 36);
+            this.guna2ComboBox1.TabIndex = 36;
             // 
             // guna2CirclePictureBox1
             // 
@@ -223,64 +281,6 @@
             this.textBox_firstName.Size = new System.Drawing.Size(191, 48);
             this.textBox_firstName.TabIndex = 1;
             // 
-            // guna2ComboBox1
-            // 
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.BorderRadius = 20;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.guna2ComboBox1.Location = new System.Drawing.Point(80, 101);
-            this.guna2ComboBox1.MaxDropDownItems = 2;
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.Size = new System.Drawing.Size(191, 36);
-            this.guna2ComboBox1.TabIndex = 36;
-            // 
-            // guna2CirclePictureBox5
-            // 
-            this.guna2CirclePictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CirclePictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox5.Image")));
-            this.guna2CirclePictureBox5.ImageRotate = 0F;
-            this.guna2CirclePictureBox5.Location = new System.Drawing.Point(28, 304);
-            this.guna2CirclePictureBox5.Name = "guna2CirclePictureBox5";
-            this.guna2CirclePictureBox5.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox5.Size = new System.Drawing.Size(46, 48);
-            this.guna2CirclePictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.guna2CirclePictureBox5.TabIndex = 38;
-            this.guna2CirclePictureBox5.TabStop = false;
-            // 
-            // textBox_address
-            // 
-            this.textBox_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_address.BorderRadius = 20;
-            this.textBox_address.BorderThickness = 0;
-            this.textBox_address.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textBox_address.DefaultText = "";
-            this.textBox_address.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.textBox_address.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.textBox_address.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox_address.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.textBox_address.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_address.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
-            this.textBox_address.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.textBox_address.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.textBox_address.Location = new System.Drawing.Point(80, 304);
-            this.textBox_address.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.textBox_address.Name = "textBox_address";
-            this.textBox_address.PasswordChar = '\0';
-            this.textBox_address.PlaceholderText = "Type your Address";
-            this.textBox_address.SelectedText = "";
-            this.textBox_address.Size = new System.Drawing.Size(437, 48);
-            this.textBox_address.TabIndex = 37;
-            // 
             // button_edit
             // 
             this.button_edit.BorderRadius = 20;
@@ -290,9 +290,9 @@
             this.button_edit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button_edit.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_edit.ForeColor = System.Drawing.Color.White;
-            this.button_edit.Location = new System.Drawing.Point(14, 492);
+            this.button_edit.Location = new System.Drawing.Point(202, 489);
             this.button_edit.Name = "button_edit";
-            this.button_edit.Size = new System.Drawing.Size(559, 45);
+            this.button_edit.Size = new System.Drawing.Size(182, 45);
             this.button_edit.TabIndex = 26;
             this.button_edit.Text = "Edit";
             // 
@@ -303,11 +303,11 @@
             this.label1.ForeColor = System.Drawing.SystemColors.Highlight;
             this.label1.Location = new System.Drawing.Point(112, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(350, 57);
+            this.label1.Size = new System.Drawing.Size(358, 59);
             this.label1.TabIndex = 27;
             this.label1.Text = "Edit Information";
             // 
-            // EditInformationForm
+            // CustomerEditInformationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,14 +316,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_edit);
             this.Controls.Add(this.guna2GroupBox1);
-            this.Name = "EditInformationForm";
+            this.Name = "CustomerEditInformationForm";
             this.Text = "EditInformationForm";
             this.guna2GroupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

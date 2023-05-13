@@ -32,5 +32,7 @@ namespace FinalWindow.Model
         public DateTime? birthday { get; set; }
 
         public DateTime? dateCreate { get; set; }
+
+        public bool active { get; set; }
     }
 }

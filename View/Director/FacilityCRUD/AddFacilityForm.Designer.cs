@@ -36,7 +36,9 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_quantityFix = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_facilityAddress = new Guna.UI2.WinForms.Guna2TextBox();
+
             this.button_addFacility = new Guna.UI2.WinForms.Guna2Button();
+
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
@@ -51,6 +53,9 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(359, 57);
             this.label1.TabIndex = 54;
+
+            this.label1.Size = new System.Drawing.Size(365, 59);
+            this.label1.TabIndex = 47;
             this.label1.Text = "Add New Facility";
             // 
             // guna2CirclePictureBox5
@@ -83,6 +88,8 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(559, 247);
             this.guna2GroupBox1.TabIndex = 53;
+            this.guna2GroupBox1.TabIndex = 45;
+            
             // 
             // textBox_quantityKeep
             // 
@@ -185,6 +192,31 @@
             this.button_addFacility.Text = "Add";
             this.button_addFacility.Click += new System.EventHandler(this.button_addFacility_Click);
             // 
+            // textBox_facilityAddress
+            // 
+            this.textBox_facilityAddress.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_facilityAddress.BorderRadius = 20;
+            this.textBox_facilityAddress.BorderThickness = 0;
+            this.textBox_facilityAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_facilityAddress.DefaultText = "";
+            this.textBox_facilityAddress.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox_facilityAddress.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox_facilityAddress.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_facilityAddress.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_facilityAddress.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_facilityAddress.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
+            this.textBox_facilityAddress.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBox_facilityAddress.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_facilityAddress.Location = new System.Drawing.Point(108, 43);
+            this.textBox_facilityAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_facilityAddress.Name = "textBox_facilityAddress";
+            this.textBox_facilityAddress.PasswordChar = '\0';
+            this.textBox_facilityAddress.PlaceholderText = "Type facility Address";
+            this.textBox_facilityAddress.SelectedText = "";
+            this.textBox_facilityAddress.Size = new System.Drawing.Size(415, 48);
+            this.textBox_facilityAddress.TabIndex = 11;
+            
+            // 
             // AddFacilityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -196,7 +228,7 @@
             this.Controls.Add(this.button_addFacility);
             this.Name = "AddFacilityForm";
             this.Text = "AddFacilityForm";
-            this.Load += new System.EventHandler(this.AddFacilityForm_Load);
+            
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).EndInit();
             this.guna2GroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
