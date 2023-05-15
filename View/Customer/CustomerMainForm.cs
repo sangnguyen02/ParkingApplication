@@ -17,10 +17,14 @@ namespace FinalWindow
 {
     public partial class CustomerMainForm : Form
     {
+        private static int cusID;
+        public static int CusID { get => cusID; set => cusID = value; }
         public CustomerMainForm()
         {
             InitializeComponent();
         }
+
+        
 
         private void button_editInformation_Click(object sender, EventArgs e)
         {
@@ -32,7 +36,7 @@ namespace FinalWindow
         {
             
             DatabaseContext context = new DatabaseContext();
-            var cus = context.Users.OfType<Customer>().Where(t=>t.ID==LoginForm.UserID).FirstOrDefault();
+            var cus = context.Users.OfType<Customer>().Where(t=>t.ID==cusID).FirstOrDefault();
             if(cus.picture != null)
             {
                 byte[] imageData = (byte[])cus.picture;

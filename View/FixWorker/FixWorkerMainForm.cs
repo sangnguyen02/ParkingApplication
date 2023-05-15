@@ -15,10 +15,15 @@ namespace FinalWindow
 {
     public partial class FixWorkerMainForm : Form
     {
+        private static int fixID;
+        public static int FixID { get => fixID; set => fixID = value; }
+
         public FixWorkerMainForm()
         {
             InitializeComponent();
         }
+
+       
 
         private void FixWorkerMainForm_Load(object sender, EventArgs e)
         {
@@ -31,7 +36,7 @@ namespace FinalWindow
             try
             {
                 DatabaseContext context = new DatabaseContext();
-                var fixer = context.Users.OfType<FixWorker>().Where(t => t.ID == LoginForm.UserID).FirstOrDefault();
+                var fixer = context.Users.OfType<FixWorker>().Where(t => t.ID == fixID).FirstOrDefault();
                 if (fixer.picture != null)
                 {
                     byte[] imageData = (byte[])fixer.picture;

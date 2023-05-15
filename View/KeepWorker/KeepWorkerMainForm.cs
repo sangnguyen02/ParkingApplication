@@ -1,6 +1,6 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Model;
-using FinalWindow.View.KeepWorker;
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +17,19 @@ namespace FinalWindow
 {
     public partial class KeepWorkerMainForm : Form
     {
+        private static int keepID;
+        public static int KeepID { get => keepID; set => keepID = value; }
+
         public KeepWorkerMainForm()
         {
             InitializeComponent();
         }
 
+        
+
         private void button_addVehicle_Click(object sender, EventArgs e)
         {
-            AddVehicleForm addVehicleForm = new AddVehicleForm();
-            addVehicleForm.Show();
+            
         }
 
         private void button_resetVehicle_Click(object sender, EventArgs e)
@@ -67,7 +71,7 @@ namespace FinalWindow
             try
             {
                 DatabaseContext context = new DatabaseContext();
-                var keeper = context.Users.OfType<KeepWorker>().Where(t => t.ID == LoginForm.UserID).FirstOrDefault();
+                var keeper = context.Users.OfType<KeepWorker>().Where(t => t.ID == keepID).FirstOrDefault();
                 if (keeper.picture != null)
                 {
                     byte[] imageData = (byte[])keeper.picture;

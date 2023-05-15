@@ -93,7 +93,7 @@ namespace FinalWindow.View.Director
 
 
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Update fail");
             }

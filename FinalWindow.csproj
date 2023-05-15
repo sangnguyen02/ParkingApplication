@@ -75,6 +75,22 @@
     <Compile Include="Migrations\202305130807451_nts1.designer.cs">
       <DependentUpon>202305130807451_nts1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305141128219_nts2.cs" />
+    <Compile Include="Migrations\202305141128219_nts2.designer.cs">
+      <DependentUpon>202305141128219_nts2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305141158271_nts3.cs" />
+    <Compile Include="Migrations\202305141158271_nts3.designer.cs">
+      <DependentUpon>202305141158271_nts3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305141207335_nts4.cs" />
+    <Compile Include="Migrations\202305141207335_nts4.designer.cs">
+      <DependentUpon>202305141207335_nts4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305141214315_nts5.cs" />
+    <Compile Include="Migrations\202305141214315_nts5.designer.cs">
+      <DependentUpon>202305141214315_nts5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Rule.cs" />
     <Compile Include="Tool\CheckInput.cs" />
@@ -120,12 +136,6 @@
     <Compile Include="View\Director\ManagersCRUD\UpdateManagerForm.Designer.cs">
       <DependentUpon>UpdateManagerForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\KeepWorker\AddVehicleForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="View\KeepWorker\AddVehicleForm.Designer.cs">
-      <DependentUpon>AddVehicleForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="View\Manager\ListWorker\ListFixWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +147,24 @@
     </Compile>
     <Compile Include="View\Manager\ListWorker\ListKeepWorkerForm.Designer.cs">
       <DependentUpon>ListKeepWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\AddShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\AddShiftForm.Designer.cs">
+      <DependentUpon>AddShiftForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\ShiftWorkForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\ShiftWorkForm.Designer.cs">
+      <DependentUpon>ShiftWorkForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\UpdateShiftForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ShiftCRUD\UpdateShiftForm.Designer.cs">
+      <DependentUpon>UpdateShiftForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\WorkerCRUD\AddWorkerForm.cs">
       <SubType>Form</SubType>
@@ -231,6 +259,18 @@
     <EmbeddedResource Include="Migrations\202305130807451_nts1.resx">
       <DependentUpon>202305130807451_nts1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305141128219_nts2.resx">
+      <DependentUpon>202305141128219_nts2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305141158271_nts3.resx">
+      <DependentUpon>202305141158271_nts3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305141207335_nts4.resx">
+      <DependentUpon>202305141207335_nts4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305141214315_nts5.resx">
+      <DependentUpon>202305141214315_nts5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Customer\CustomerMainForm.resx">
       <DependentUpon>CustomerMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,9 +298,6 @@
     <EmbeddedResource Include="View\FixWorker\FixWorkerMainForm.resx">
       <DependentUpon>FixWorkerMainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\KeepWorker\AddVehicleForm.resx">
-      <DependentUpon>AddVehicleForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="View\KeepWorker\KeepWorkerMainForm.resx">
       <DependentUpon>KeepWorkerMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -272,6 +309,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manager\ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ShiftCRUD\AddShiftForm.resx">
+      <DependentUpon>AddShiftForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ShiftCRUD\ShiftWorkForm.resx">
+      <DependentUpon>ShiftWorkForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ShiftCRUD\UpdateShiftForm.resx">
+      <DependentUpon>UpdateShiftForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manager\WorkerCRUD\AddWorkerForm.resx">
       <DependentUpon>AddWorkerForm.cs</DependentUpon>
