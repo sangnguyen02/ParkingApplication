@@ -100,6 +100,12 @@
     <Compile Include="View\Customer\CustomerEditInformationForm.Designer.cs">
       <DependentUpon>CustomerEditInformationForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\Director\DirectorEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\DirectorEditInformationForm.Designer.cs">
+      <DependentUpon>DirectorEditInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Director\FacilityCRUD\AddFacilityForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,18 @@
     <Compile Include="View\Director\ManagersCRUD\UpdateManagerForm.Designer.cs">
       <DependentUpon>UpdateManagerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\FixWorker\FixWorkerEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\FixWorker\FixWorkerEditInformationForm.Designer.cs">
+      <DependentUpon>FixWorkerEditInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\KeepWorker\KeepWorkerEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\KeepWorker\KeepWorkerEditInformationForm.Designer.cs">
+      <DependentUpon>KeepWorkerEditInformationForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Manager\ListWorker\ListFixWorkerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +165,12 @@
     </Compile>
     <Compile Include="View\Manager\ListWorker\ListKeepWorkerForm.Designer.cs">
       <DependentUpon>ListKeepWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Manager\ManagerEditInformationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Manager\ManagerEditInformationForm.Designer.cs">
+      <DependentUpon>ManagerEditInformationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Manager\ShiftCRUD\AddShiftForm.cs">
       <SubType>Form</SubType>
@@ -277,6 +301,9 @@
     <EmbeddedResource Include="View\Customer\CustomerEditInformationForm.resx">
       <DependentUpon>CustomerEditInformationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\DirectorEditInformationForm.resx">
+      <DependentUpon>DirectorEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Director\FacilityCRUD\AddFacilityForm.resx">
       <DependentUpon>AddFacilityForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -295,8 +322,14 @@
     <EmbeddedResource Include="View\Director\ManagersCRUD\UpdateManagerForm.resx">
       <DependentUpon>UpdateManagerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\FixWorker\FixWorkerEditInformationForm.resx">
+      <DependentUpon>FixWorkerEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\FixWorker\FixWorkerMainForm.resx">
       <DependentUpon>FixWorkerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\KeepWorker\KeepWorkerEditInformationForm.resx">
+      <DependentUpon>KeepWorkerEditInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\KeepWorker\KeepWorkerMainForm.resx">
       <DependentUpon>KeepWorkerMainForm.cs</DependentUpon>
@@ -306,6 +339,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manager\ListWorker\ListKeepWorkerForm.resx">
       <DependentUpon>ListKeepWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Manager\ManagerEditInformationForm.resx">
+      <DependentUpon>ManagerEditInformationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Manager\ManagerMainForm.resx">
       <DependentUpon>ManagerMainForm.cs</DependentUpon>

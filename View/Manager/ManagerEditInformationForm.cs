@@ -1,6 +1,5 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Tool;
-using FinalWindow.View.Director;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,18 +9,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace FinalWindow.View.Customer
+namespace FinalWindow.View.Manager
 {
-    public partial class CustomerEditInformationForm : Form
+    public partial class ManagerEditInformationForm : Form
     {
-        public CustomerEditInformationForm()
+        public ManagerEditInformationForm()
         {
             InitializeComponent();
         }
+
         string[] checkUser = { "fuck", "Nigger", "Twat", "Ass" };
         public string temp = null;
         public static byte[] converterDemo(System.Drawing.Image x)
@@ -30,6 +28,7 @@ namespace FinalWindow.View.Customer
             byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
             return xByte;
         }
+
         private void button_edit_Click(object sender, EventArgs e)
         {
             try
@@ -113,9 +112,9 @@ namespace FinalWindow.View.Customer
                 try
                 {
 
-                    Model.Customer cus = context.Users.OfType<Model.Customer>().Where(u => u.ID == CustomerMainForm.CusID).FirstOrDefault();
+                    Model.Manager man = context.Users.OfType<Model.Manager>().Where(u => u.ID == ManagerMainForm.ManID).FirstOrDefault();
 
-                    if (cus == null)
+                    if (man == null)
                     {
 
                         MessageBox.Show("Don't exist this manager");
@@ -123,15 +122,15 @@ namespace FinalWindow.View.Customer
                     }
                     else
                     {
-                        cus.firstName = textBox_firstName.Text;
-                        cus.lastName = textBox_lastName.Text;
-                        cus.gender = comboBox_gender.SelectedItem.ToString();
-                        cus.email = textBox_email.Text;
-                        cus.phone = textBox_phone.Text;
-                        cus.address = textBox_address.Text;
-                        cus.birthday = birthday_picker.Value;
-                        if(pictureBox_image != null) { cus.picture = converterDemo(pictureBox_image.Image); }
-                        
+                        man.firstName = textBox_firstName.Text;
+                        man.lastName = textBox_lastName.Text;
+                        man.gender = comboBox_gender.SelectedItem.ToString();
+                        man.email = textBox_email.Text;
+                        man.phone = textBox_phone.Text;
+                        man.address = textBox_address.Text;
+                        man.birthday = birthday_picker.Value;
+                        if (pictureBox_image != null) { man.picture = converterDemo(pictureBox_image.Image); }
+
 
 
                         context.SaveChanges();
@@ -147,30 +146,6 @@ namespace FinalWindow.View.Customer
             {
                 MessageBox.Show("Update fail");
             }
-        }
-
-        void loadProfile()
-        {
-            DatabaseContext context = new DatabaseContext();
-            var cus = context.Users.OfType<Model.Customer>().Where(t => t.ID == CustomerMainForm.CusID).FirstOrDefault();
-            if (cus == null) { return; }
-            if (cus.picture != null)
-            {
-                byte[] imageData = (byte[])cus.picture;
-                using (MemoryStream ms = new MemoryStream(imageData))
-                {
-                    pictureBox_image.Image = System.Drawing.Image.FromStream(ms);
-                }
-            }
-            label_username.Text = cus.username;  
-        }
-    
-
-
-        private void CustomerEditInformationForm_Load(object sender, EventArgs e)
-        {
-            loadProfile();
-            
         }
 
         private void pictureBox_image_Click(object sender, EventArgs e)
@@ -190,6 +165,25 @@ namespace FinalWindow.View.Customer
             }
         }
 
-        
+        private void ManagerEditInformationForm_Load(object sender, EventArgs e)
+        {
+            loadProfile();
+        }
+
+        void loadProfile()
+        {
+            DatabaseContext context = new DatabaseContext();
+            var man = context.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
+            if (man == null) { return; }
+            if (man.picture != null)
+            {
+                byte[] imageData = (byte[])man.picture;
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    pictureBox_image.Image = System.Drawing.Image.FromStream(ms);
+                }
+            }
+            label_username.Text = man.username;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                 var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                 using (var context = new DatabaseContext())
                 {
-                    var keeperData = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID)
+                    var keeperData = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID)
                         .Select(u => new
                         {
                             CardID = u.cardID,
@@ -74,7 +74,7 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                 var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                 using (var context = new DatabaseContext())
                 {
-                    var fixerData = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID)
+                    var fixerData = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID)
                         // .Where(u => u.cardID)
                         .Select(u => new
                         {

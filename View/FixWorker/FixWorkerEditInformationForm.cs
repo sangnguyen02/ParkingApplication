@@ -1,6 +1,5 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Tool;
-using FinalWindow.View.Director;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,15 +9,13 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace FinalWindow.View.Customer
+namespace FinalWindow.View.FixWorker
 {
-    public partial class CustomerEditInformationForm : Form
+    public partial class FixWorkerEditInformationForm : Form
     {
-        public CustomerEditInformationForm()
+        public FixWorkerEditInformationForm()
         {
             InitializeComponent();
         }
@@ -113,9 +110,9 @@ namespace FinalWindow.View.Customer
                 try
                 {
 
-                    Model.Customer cus = context.Users.OfType<Model.Customer>().Where(u => u.ID == CustomerMainForm.CusID).FirstOrDefault();
+                    Model.FixWorker fix = context.Users.OfType<Model.FixWorker>().Where(u => u.ID == FixWorkerMainForm.FixID).FirstOrDefault();
 
-                    if (cus == null)
+                    if (fix == null)
                     {
 
                         MessageBox.Show("Don't exist this manager");
@@ -123,15 +120,15 @@ namespace FinalWindow.View.Customer
                     }
                     else
                     {
-                        cus.firstName = textBox_firstName.Text;
-                        cus.lastName = textBox_lastName.Text;
-                        cus.gender = comboBox_gender.SelectedItem.ToString();
-                        cus.email = textBox_email.Text;
-                        cus.phone = textBox_phone.Text;
-                        cus.address = textBox_address.Text;
-                        cus.birthday = birthday_picker.Value;
-                        if(pictureBox_image != null) { cus.picture = converterDemo(pictureBox_image.Image); }
-                        
+                        fix.firstName = textBox_firstName.Text;
+                        fix.lastName = textBox_lastName.Text;
+                        fix.gender = comboBox_gender.SelectedItem.ToString();
+                        fix.email = textBox_email.Text;
+                        fix.phone = textBox_phone.Text;
+                        fix.address = textBox_address.Text;
+                        fix.birthday = birthday_picker.Value;
+                        if (pictureBox_image != null) { fix.picture = converterDemo(pictureBox_image.Image); }
+
 
 
                         context.SaveChanges();
@@ -149,28 +146,24 @@ namespace FinalWindow.View.Customer
             }
         }
 
+        private void FixWorkerEditInformationForm_Load(object sender, EventArgs e)
+        {
+            loadProfile();
+        }
         void loadProfile()
         {
             DatabaseContext context = new DatabaseContext();
-            var cus = context.Users.OfType<Model.Customer>().Where(t => t.ID == CustomerMainForm.CusID).FirstOrDefault();
-            if (cus == null) { return; }
-            if (cus.picture != null)
+            var fix = context.Users.OfType<Model.FixWorker>().Where(t => t.ID == FixWorkerMainForm.FixID).FirstOrDefault();
+            if (fix == null) { return; }
+            if (fix.picture != null)
             {
-                byte[] imageData = (byte[])cus.picture;
+                byte[] imageData = (byte[])fix.picture;
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
                     pictureBox_image.Image = System.Drawing.Image.FromStream(ms);
                 }
             }
-            label_username.Text = cus.username;  
-        }
-    
-
-
-        private void CustomerEditInformationForm_Load(object sender, EventArgs e)
-        {
-            loadProfile();
-            
+            label_username.Text = fix.username;
         }
 
         private void pictureBox_image_Click(object sender, EventArgs e)
@@ -189,7 +182,5 @@ namespace FinalWindow.View.Customer
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
     }
 }

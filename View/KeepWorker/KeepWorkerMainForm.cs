@@ -1,6 +1,7 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Model;
-
+using FinalWindow.View.Customer;
+using FinalWindow.View.KeepWorker;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -95,6 +96,17 @@ namespace FinalWindow
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+
+        private void button_editInformation_Click(object sender, EventArgs e)
+        {
+            KeepWorkerEditInformationForm editInformationForm = new KeepWorkerEditInformationForm();
+            editInformationForm.Show();
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            loadProfile();
         }
     }
 }

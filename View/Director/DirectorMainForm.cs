@@ -1,5 +1,6 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Model;
+using FinalWindow.View.Customer;
 using FinalWindow.View.Director;
 using FinalWindow.View.Director.FacilityCRUD;
 using FinalWindow.View.Manager.ShiftCRUD;
@@ -87,33 +88,33 @@ namespace FinalWindow
             //    dataGridView_listManager.DataSource = managerData;
             //}
         }
-        void loadTime()
-        {
-            try
-            {
-                using (var context = new DatabaseContext())
-                {
-                    var shiftData = context.Shifts
-                        // .Where(u => u.cardID)
-                        .Select(u => new
-                        {
-                            StartTime = u.startTime,
-                            EndTime = u.endTime,
-                            QuantiTyFix = u.quantityFix,
-                            QuantityKeep = u.quantityKeep
+        //void loadTime()
+        //{
+        //    try
+        //    {
+        //        using (var context = new DatabaseContext())
+        //        {
+        //            var shiftData = context.Shifts
+        //                // .Where(u => u.cardID)
+        //                .Select(u => new
+        //                {
+        //                    StartTime = u.startTime,
+        //                    EndTime = u.endTime,
+        //                    QuantiTyFix = u.quantityFix,
+        //                    QuantityKeep = u.quantityKeep
 
 
-                        })
-                        .ToList();
+        //                })
+        //                .ToList();
 
 
 
-                    dataGridView_listShift.DataSource = shiftData;
-                }
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
+        //            dataGridView_listShift.DataSource = shiftData;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        //}
 
         void loadProfile()
         {
@@ -132,11 +133,26 @@ namespace FinalWindow
                 label_username.Text = director.username;
                 label_firstName.Text = director.firstName;
                 label_lastName.Text = director.lastName;
-                label_gender.Text = director.gender;
-                //label_birthDate.Text = director.birthday.Value.Date.ToString("dd/MM/yyyy");
-                //label_email.Text = director.email;
-                //label_phone.Text = director.phone;
-                //label_address.Text = director.address;
+                if (director.gender == null)
+                {
+                    return;
+                }
+                else
+                {
+                    label_gender.Text = director.gender;
+                }
+
+                if (director.birthday == null)
+                {
+                    return;
+                }
+                else
+                {
+                    label_birthDate.Text = director.birthday.Value.Date.ToString("dd/MM/yyyy");
+                }
+                label_email.Text = director.email;
+                label_phone.Text = director.phone;
+                label_address.Text = director.address;
             }
             catch (Exception ex)
             {
@@ -147,8 +163,9 @@ namespace FinalWindow
 
         private void DirectorMainForm_Load(object sender, EventArgs e)
         {
-            loadTime();
+            
             loadProfile();
+            
             /*// Get a reference to the initially selected tab page
             //TabPage selectedTabPage = tabPage_managerManagement;
 
@@ -330,6 +347,17 @@ namespace FinalWindow
                 updateShiftForm.dateTimePicker_To.Value = (DateTime)cellValue;
             }
             updateShiftForm.Show();
+        }
+
+        private void button_editInformation_Click(object sender, EventArgs e)
+        {
+            DirectorEditInformationForm editInformationForm = new DirectorEditInformationForm();
+            editInformationForm.Show();
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            loadProfile();
         }
     }
 }

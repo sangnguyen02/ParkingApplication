@@ -1,5 +1,6 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Model;
+using FinalWindow.View.Customer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

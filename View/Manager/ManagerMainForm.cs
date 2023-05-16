@@ -1,5 +1,7 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Model;
+using FinalWindow.View.Customer;
+using FinalWindow.View.Manager;
 using FinalWindow.View.Manager.ShiftCRUD;
 using FinalWindow.View.Manager.WorkerCRUD;
 using System;
@@ -235,6 +237,17 @@ namespace FinalWindow
         {
             ShiftWorkForm shiftWorkForm = new ShiftWorkForm();
             shiftWorkForm.Show();
+        }
+
+        private void button_editInformation_Click(object sender, EventArgs e)
+        {
+            ManagerEditInformationForm editInformationForm = new ManagerEditInformationForm();
+            editInformationForm.Show();
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            loadProfile();
         }
     }
 }

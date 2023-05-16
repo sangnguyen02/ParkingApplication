@@ -1,6 +1,5 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Tool;
-using FinalWindow.View.Director;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,18 +9,12 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
-namespace FinalWindow.View.Customer
+namespace FinalWindow.View.Director
 {
-    public partial class CustomerEditInformationForm : Form
+    public partial class DirectorEditInformationForm : Form
     {
-        public CustomerEditInformationForm()
-        {
-            InitializeComponent();
-        }
         string[] checkUser = { "fuck", "Nigger", "Twat", "Ass" };
         public string temp = null;
         public static byte[] converterDemo(System.Drawing.Image x)
@@ -30,6 +23,11 @@ namespace FinalWindow.View.Customer
             byte[] xByte = (byte[])_imageConverter.ConvertTo(x, typeof(byte[]));
             return xByte;
         }
+        public DirectorEditInformationForm()
+        {
+            InitializeComponent();
+        }
+
         private void button_edit_Click(object sender, EventArgs e)
         {
             try
@@ -113,9 +111,9 @@ namespace FinalWindow.View.Customer
                 try
                 {
 
-                    Model.Customer cus = context.Users.OfType<Model.Customer>().Where(u => u.ID == CustomerMainForm.CusID).FirstOrDefault();
+                    Model.Director dir = context.Users.OfType<Model.Director>().Where(u => u.ID == DirectorMainForm.DirID).FirstOrDefault();
 
-                    if (cus == null)
+                    if (dir == null)
                     {
 
                         MessageBox.Show("Don't exist this manager");
@@ -123,14 +121,17 @@ namespace FinalWindow.View.Customer
                     }
                     else
                     {
-                        cus.firstName = textBox_firstName.Text;
-                        cus.lastName = textBox_lastName.Text;
-                        cus.gender = comboBox_gender.SelectedItem.ToString();
-                        cus.email = textBox_email.Text;
-                        cus.phone = textBox_phone.Text;
-                        cus.address = textBox_address.Text;
-                        cus.birthday = birthday_picker.Value;
-                        if(pictureBox_image != null) { cus.picture = converterDemo(pictureBox_image.Image); }
+                        dir.firstName = textBox_firstName.Text;
+                        dir.lastName = textBox_lastName.Text;
+                        dir.gender = comboBox_gender.SelectedItem.ToString();
+                        dir.email = textBox_email.Text;
+                        dir.phone = textBox_phone.Text;
+                        dir.address = textBox_address.Text;
+                        dir.birthday = birthday_picker.Value;
+                        if(pictureBox_image.Image != null)
+                        {
+                            dir.picture = converterDemo(pictureBox_image.Image);
+                        }
                         
 
 
@@ -152,25 +153,22 @@ namespace FinalWindow.View.Customer
         void loadProfile()
         {
             DatabaseContext context = new DatabaseContext();
-            var cus = context.Users.OfType<Model.Customer>().Where(t => t.ID == CustomerMainForm.CusID).FirstOrDefault();
-            if (cus == null) { return; }
-            if (cus.picture != null)
+            Model.Director dir = context.Users.OfType<Model.Director>().Where(u => u.ID == DirectorMainForm.DirID).FirstOrDefault();
+            if (dir == null) { return; }
+            if (dir.picture != null)
             {
-                byte[] imageData = (byte[])cus.picture;
+                byte[] imageData = (byte[])dir.picture;
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
                     pictureBox_image.Image = System.Drawing.Image.FromStream(ms);
                 }
             }
-            label_username.Text = cus.username;  
+            label_username.Text = dir.username;
         }
-    
 
-
-        private void CustomerEditInformationForm_Load(object sender, EventArgs e)
+        private void DirectorEditInformationForm_Load(object sender, EventArgs e)
         {
             loadProfile();
-            
         }
 
         private void pictureBox_image_Click(object sender, EventArgs e)
@@ -189,7 +187,5 @@ namespace FinalWindow.View.Customer
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        
     }
 }

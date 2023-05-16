@@ -100,7 +100,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 {
                     using (var context = new DatabaseContext())
                     {
-                        var fixerData = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
+                        var fixerData = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
                             .Select(u => new
                             {
                                 CardID = u.cardID,
@@ -116,7 +116,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
 
                     using (var context = new DatabaseContext())
                     {
-                        var fixer = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID).Join(context.Shifts,
+                        var fixer = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID).Join(context.Shifts,
                             User => User.shiftID,
                             Shift => Shift.ID,
                             (User, Shift) => new
@@ -143,7 +143,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 {
                     using (var context = new DatabaseContext())
                     {
-                        var keeperData = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
+                        var keeperData = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
                             .Select(u => new
                             {
                                 CardID = u.cardID,
@@ -160,7 +160,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
 
                     using (var context = new DatabaseContext())
                     {
-                        var keeper = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID).Join(context.Shifts,
+                        var keeper = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID).Join(context.Shifts,
                             User => User.shiftID,
                             Shift => Shift.ID,
                             (User, Shift) => new
@@ -198,7 +198,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 {
                     using (var context = new DatabaseContext())
                     {
-                        var fixerData = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
+                        var fixerData = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
                             .Select(u => new
                             {
                                 CardID = u.cardID,
@@ -214,7 +214,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
 
                     using (var context = new DatabaseContext())
                     {
-                        var fixer = context.Users.OfType<FixWorker>().Where(t=>t.facilityID == manager.facilityID).Join(context.Shifts,
+                        var fixer = context.Users.OfType<Model.FixWorker>().Where(t=>t.facilityID == manager.facilityID).Join(context.Shifts,
                             User => User.shiftID,
                             Shift => Shift.ID,
                             (User, Shift) => new
@@ -243,7 +243,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 {
                     using (var context = new DatabaseContext())
                     {
-                        var keeperData = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
+                        var keeperData = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
                             .Select(u => new
                             {
                                 CardID = u.cardID,
@@ -260,7 +260,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
 
                     using (var context = new DatabaseContext())
                     {
-                        var keeper = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID).Join(context.Shifts, 
+                        var keeper = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID).Join(context.Shifts, 
                             User => User.shiftID,
                             Shift => Shift.ID,
                             (User, Shift) => new
@@ -388,7 +388,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 {
                     using (var context = new DatabaseContext())
                     {
-                        var fixerData = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
+                        var fixerData = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
                             .Select(u => new
                             {
                                 CardID = u.cardID,
@@ -405,7 +405,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                     using (var context = new DatabaseContext())
                     {
                         int shiftid = (int)comboBox_shift.SelectedValue;
-                        var fixer = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == shiftid).Join(context.Shifts,
+                        var fixer = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == shiftid).Join(context.Shifts,
                             User => User.shiftID,
                             Shift => Shift.ID,
                             (User, Shift) => new
@@ -436,7 +436,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 {
                     using (var context = new DatabaseContext())
                     {
-                        var keeperData = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
+                        var keeperData = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == null)
                             .Select(u => new
                             {
                                 CardID = u.cardID,
@@ -454,7 +454,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                     using (var context = new DatabaseContext())
                     {
                         int shiftid = (int)comboBox_shift.SelectedValue;
-                        var keeper = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == shiftid).Join(context.Shifts,
+                        var keeper = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.shiftID == shiftid).Join(context.Shifts,
                             User => User.shiftID,
                             Shift => Shift.ID,
                             (User, Shift) => new
@@ -492,7 +492,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 DatabaseContext context = new DatabaseContext();
                 if (comboBox_typeWorker.SelectedIndex == 0)
                 {
-                    FixWorker fixer = context.Users.OfType<FixWorker>().Where(t => t.cardID == cardID).FirstOrDefault();
+                    Model.FixWorker fixer = context.Users.OfType<Model.FixWorker>().Where(t => t.cardID == cardID).FirstOrDefault();
                     fixer.shiftID = null;
                     context.SaveChanges();
                     loadDataGridView();
@@ -501,7 +501,7 @@ namespace FinalWindow.View.Manager.ShiftCRUD
                 }
                 else if (comboBox_typeWorker.SelectedIndex == 1)
                 {
-                    KeepWorker keeper = context.Users.OfType<KeepWorker>().Where(t => t.cardID == cardID).FirstOrDefault();
+                    Model.KeepWorker keeper = context.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == cardID).FirstOrDefault();
                     keeper.shiftID = null;
                     context.SaveChanges();
                     loadDataGridView(); 
