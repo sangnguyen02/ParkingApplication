@@ -1,4 +1,4 @@
-﻿using FinalWindow.Model;
+﻿   using FinalWindow.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -23,6 +23,7 @@ namespace FinalWindow.Database
         public DbSet<Contract> Contracts { get; set; }
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<Salary> Salaries { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

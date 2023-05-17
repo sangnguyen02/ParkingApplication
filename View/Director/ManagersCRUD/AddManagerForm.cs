@@ -110,9 +110,11 @@ namespace FinalWindow.View.Director
                     return;
                 }
 
-                var checkcardID = db.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
-                
-                if (checkcardID > 0)
+                var checkcardIDman = db.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkcardIDfix = db.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkcardIDkeep = db.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+
+                if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
                 {
                     MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -133,8 +135,9 @@ namespace FinalWindow.View.Director
                     email = textBox_email.Text,
                     address = textBox_address.Text,
                     birthday = birthday_picker.Value.Date,
-                    picture = converterDemo(pictureBox_image.Image)
-
+                    picture = converterDemo(pictureBox_image.Image),
+                    coefficients = 1,
+                    salaryID = (int)comboBox_salaryrRole.SelectedValue
                 };
                 try
                 {
@@ -179,7 +182,14 @@ namespace FinalWindow.View.Director
             comboBox_facilityID.DisplayMember = "address";
             comboBox_facilityID.ValueMember = "ID";
             comboBox_facilityID.SelectedItem = null;
-           
+
+            comboBox_salaryrRole.DataSource = context.Salaries.ToList();
+            comboBox_salaryrRole.DisplayMember = "role";
+            comboBox_salaryrRole.ValueMember = "salaryID";
+            comboBox_salaryrRole.SelectedItem = null;
+
+
+
         }
     }
 }

@@ -50,6 +50,7 @@
             this.pictureBox_image = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_username = new Guna.UI2.WinForms.Guna2TextBox();
             this.textBox_password = new Guna.UI2.WinForms.Guna2TextBox();
+            this.comboBox_salaryrRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
@@ -385,9 +386,9 @@
             this.button_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button_add.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(83, 665);
+            this.button_add.Location = new System.Drawing.Point(396, 665);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(559, 45);
+            this.button_add.Size = new System.Drawing.Size(246, 45);
             this.button_add.TabIndex = 29;
             this.button_add.Text = "Add";
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
@@ -453,12 +454,34 @@
             this.textBox_password.Size = new System.Drawing.Size(210, 43);
             this.textBox_password.TabIndex = 2;
             // 
+            // comboBox_salaryrRole
+            // 
+            this.comboBox_salaryrRole.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_salaryrRole.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_salaryrRole.BorderRadius = 20;
+            this.comboBox_salaryrRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_salaryrRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_salaryrRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_salaryrRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_salaryrRole.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_salaryrRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_salaryrRole.ItemHeight = 30;
+            this.comboBox_salaryrRole.Items.AddRange(new object[] {
+            "Male",
+            "Female"});
+            this.comboBox_salaryrRole.Location = new System.Drawing.Point(127, 665);
+            this.comboBox_salaryrRole.MaxDropDownItems = 2;
+            this.comboBox_salaryrRole.Name = "comboBox_salaryrRole";
+            this.comboBox_salaryrRole.Size = new System.Drawing.Size(191, 36);
+            this.comboBox_salaryrRole.TabIndex = 45;
+            // 
             // AddManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(722, 722);
+            this.ClientSize = new System.Drawing.Size(722, 763);
+            this.Controls.Add(this.comboBox_salaryrRole);
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.pictureBox_image);
@@ -505,5 +528,6 @@
         private Guna.UI2.WinForms.Guna2TextBox textBox_password;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthday_picker;
         private Guna.UI2.WinForms.Guna2ComboBox comboBox_facilityID;
+        public Guna.UI2.WinForms.Guna2ComboBox comboBox_salaryrRole;
     }
 }

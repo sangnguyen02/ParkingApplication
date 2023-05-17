@@ -1,5 +1,6 @@
 ﻿using FinalWindow.Database;
 using FinalWindow.Model;
+using FinalWindow.Tool;
 using FinalWindow.View.Customer;
 using FinalWindow.View.Director;
 using FinalWindow.View.Director.FacilityCRUD;
@@ -165,6 +166,7 @@ namespace FinalWindow
         {
             
             loadProfile();
+            loadSalary();
             
             /*// Get a reference to the initially selected tab page
             //TabPage selectedTabPage = tabPage_managerManagement;
@@ -260,11 +262,6 @@ namespace FinalWindow
             addFacilityForm.Show();
         }
 
-        private void dataGridView_listFacility_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void button_addManager_Click(object sender, EventArgs e)
         {
             AddManagerForm addManagerForm = new AddManagerForm();
@@ -358,6 +355,150 @@ namespace FinalWindow
         private void button_reset_Click(object sender, EventArgs e)
         {
             loadProfile();
+        }
+
+        private void button_addBaseSalary_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DatabaseContext db = new DatabaseContext();
+                if (string.IsNullOrEmpty(textBox_baseSalary.Text) || comboBox_role.SelectedItem == null)
+                {
+                    MessageBox.Show("Please enter all information");
+                    return;
+                }
+
+
+                var salary = new Model.Salary
+                {
+                    BasicSalary = float.Parse(textBox_baseSalary.Text),
+                    role = comboBox_role.SelectedItem.ToString()
+
+                };
+                var checkSalary = db.Salaries.Where(t => t.role == comboBox_role.SelectedItem.ToString()).Count();
+                if(checkSalary >0)
+                {
+                    MessageBox.Show("You have already set basic salary for this role.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                try
+                {
+                    db.Salaries.Add(salary);
+                    db.SaveChanges();
+                    loadSalary();
+                    MessageBox.Show("Add successfully.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void button_resetSalary_Click(object sender, EventArgs e)
+        {
+            loadSalary();
+        }
+
+        void loadSalary()
+        {
+            try
+            {
+                using (var context = new DatabaseContext())
+                {
+                    var baseSalaryData = context.Salaries
+                        // .Where(u => u.cardID)
+                        .Select(u => new
+                        {
+                            BasicSalaries = u.BasicSalary.ToString(),
+                            Role = u.role
+                        })
+                        .ToList();
+
+                    dataGridView_baseSalary.DataSource = baseSalaryData;
+                }
+            }
+            catch (Exception ex)
+            { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        }
+
+        private void button_Update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DatabaseContext context = new DatabaseContext();
+
+                try
+                {
+                    string role = comboBox_role.SelectedItem.ToString();
+                    Model.Salary salary = context.Salaries.Where(u => u.role == role).FirstOrDefault();
+                    var checkcardIDman = context.Salaries.Where(t => t.role == comboBox_role.SelectedItem.ToString()).Count();
+                    if (role == null)
+                    {
+                        MessageBox.Show("Don't exist this role");
+                    }
+                    //else if (checkcardIDman > 0)
+                    //{
+                    //    MessageBox.Show("You have already set basic salary for this role.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //    return;
+                    //}
+                    else if(checkcardIDman == 0)
+                    {
+                        MessageBox.Show("You have not set basic salary for this role.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            salary.BasicSalary = float.Parse(textBox_baseSalary.Text);
+                            //salary.role = comboBox_role.SelectedItem.ToString();
+
+                            context.SaveChanges();
+                            loadSalary();
+                            MessageBox.Show("Update successfully !!!");
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                        
+                    }
+
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Cannot update !!");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Update fail");
+            }
+        }
+
+        private void dataGridView_baseSalary_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if(dataGridView_baseSalary.CurrentRow != null)
+                {
+                    textBox_baseSalary.Text = dataGridView_baseSalary.CurrentRow.Cells["BasicSalaries"].Value.ToString();
+                    comboBox_role.SelectedItem = dataGridView_baseSalary.CurrentRow.Cells["Role"].Value;
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_payRoll_Click(object sender, EventArgs e)
+        {
+            PayRollManagerForm form = new PayRollManagerForm();
+            form.Show();
         }
     }
 }

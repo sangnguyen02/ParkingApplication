@@ -184,20 +184,15 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                     return;
                 }
 
-                var checkcardID = db.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
-                var checkcardID2 = db.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkcardIDman = db.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkcardIDfix = db.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkcardIDkeep = db.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
 
-                if (checkcardID > 0 && checkcardID2 > 0)
+                if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
                 {
                     MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                //if (CheckInput.CheckYear(birthday_picker.Text) == false)
-                //{
-                //    MessageBox.Show("Student is invalid age");
-                //    return;
-                //}
 
                 if (pictureBox_image == null)
                 {
@@ -222,7 +217,8 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                         email = textBox_email.Text,
                         address = textBox_address.Text,
                         birthday = birthday_picker.Value.Date,
-                        picture = converterDemo(pictureBox_image.Image)
+                        picture = converterDemo(pictureBox_image.Image),
+                        coefficients = 1
 
                     };
                     try
@@ -250,7 +246,8 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                         email = textBox_email.Text,
                         address = textBox_address.Text,
                         birthday = birthday_picker.Value.Date,
-                        picture = converterDemo(pictureBox_image.Image)
+                        picture = converterDemo(pictureBox_image.Image),
+                        coefficients = 1
 
                     };
                     try

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectorMainForm));
             this.label_birthDate = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
             this.label_email = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.pictureBox_directorImage = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.button_editInformation = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage_profile = new System.Windows.Forms.TabPage();
+            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.tabControl_director = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage_managerManagement = new System.Windows.Forms.TabPage();
@@ -66,7 +68,14 @@
             this.button_resetListShift = new Guna.UI2.WinForms.Guna2Button();
             this.button_addShift = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView_listShift = new System.Windows.Forms.DataGridView();
-            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
+            this.tabPage_salary = new System.Windows.Forms.TabPage();
+            this.dataGridView_baseSalary = new System.Windows.Forms.DataGridView();
+            this.button_addBaseSalary = new Guna.UI2.WinForms.Guna2Button();
+            this.button_Update = new Guna.UI2.WinForms.Guna2Button();
+            this.comboBox_role = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.textBox_baseSalary = new Guna.UI2.WinForms.Guna2TextBox();
+            this.button_payRoll = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_directorImage)).BeginInit();
             this.tabPage_profile.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -77,6 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listFacility)).BeginInit();
             this.tabPage_shift.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listShift)).BeginInit();
+            this.tabPage_salary.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_baseSalary)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // label_birthDate
@@ -294,6 +306,22 @@
             this.tabPage_profile.TabIndex = 0;
             this.tabPage_profile.Text = "Profile";
             // 
+            // button_reset
+            // 
+            this.button_reset.BorderRadius = 20;
+            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reset.ForeColor = System.Drawing.Color.White;
+            this.button_reset.Location = new System.Drawing.Point(6, 546);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(95, 34);
+            this.button_reset.TabIndex = 4;
+            this.button_reset.Text = "Reset";
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -331,6 +359,7 @@
             this.tabControl_director.Controls.Add(this.tabPage_managerManagement);
             this.tabControl_director.Controls.Add(this.tabPage_facilityManagement);
             this.tabControl_director.Controls.Add(this.tabPage_shift);
+            this.tabControl_director.Controls.Add(this.tabPage_salary);
             this.tabControl_director.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl_director.ItemSize = new System.Drawing.Size(180, 40);
             this.tabControl_director.Location = new System.Drawing.Point(12, 12);
@@ -531,7 +560,6 @@
             this.dataGridView_listFacility.RowTemplate.Height = 24;
             this.dataGridView_listFacility.Size = new System.Drawing.Size(749, 408);
             this.dataGridView_listFacility.TabIndex = 1;
-            this.dataGridView_listFacility.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_listFacility_CellContentClick);
             // 
             // tabPage_shift
             // 
@@ -605,21 +633,138 @@
             this.dataGridView_listShift.TabIndex = 9;
             this.dataGridView_listShift.Click += new System.EventHandler(this.dataGridView_listShift_Click);
             // 
-            // button_reset
+            // tabPage_salary
             // 
-            this.button_reset.BorderRadius = 20;
-            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(6, 546);
-            this.button_reset.Name = "button_reset";
-            this.button_reset.Size = new System.Drawing.Size(95, 34);
-            this.button_reset.TabIndex = 4;
-            this.button_reset.Text = "Reset";
-            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            this.tabPage_salary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
+            this.tabPage_salary.Controls.Add(this.button_payRoll);
+            this.tabPage_salary.Controls.Add(this.guna2CirclePictureBox6);
+            this.tabPage_salary.Controls.Add(this.textBox_baseSalary);
+            this.tabPage_salary.Controls.Add(this.comboBox_role);
+            this.tabPage_salary.Controls.Add(this.button_Update);
+            this.tabPage_salary.Controls.Add(this.button_addBaseSalary);
+            this.tabPage_salary.Controls.Add(this.dataGridView_baseSalary);
+            this.tabPage_salary.Location = new System.Drawing.Point(184, 4);
+            this.tabPage_salary.Name = "tabPage_salary";
+            this.tabPage_salary.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_salary.Size = new System.Drawing.Size(845, 603);
+            this.tabPage_salary.TabIndex = 4;
+            this.tabPage_salary.Text = "Salary";
+            // 
+            // dataGridView_baseSalary
+            // 
+            this.dataGridView_baseSalary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_baseSalary.Location = new System.Drawing.Point(116, 45);
+            this.dataGridView_baseSalary.Name = "dataGridView_baseSalary";
+            this.dataGridView_baseSalary.RowHeadersWidth = 51;
+            this.dataGridView_baseSalary.RowTemplate.Height = 24;
+            this.dataGridView_baseSalary.Size = new System.Drawing.Size(483, 189);
+            this.dataGridView_baseSalary.TabIndex = 0;
+            this.dataGridView_baseSalary.Click += new System.EventHandler(this.dataGridView_baseSalary_Click);
+            // 
+            // button_addBaseSalary
+            // 
+            this.button_addBaseSalary.BorderRadius = 20;
+            this.button_addBaseSalary.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_addBaseSalary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_addBaseSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_addBaseSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_addBaseSalary.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_addBaseSalary.ForeColor = System.Drawing.Color.White;
+            this.button_addBaseSalary.Location = new System.Drawing.Point(116, 370);
+            this.button_addBaseSalary.Name = "button_addBaseSalary";
+            this.button_addBaseSalary.Size = new System.Drawing.Size(191, 45);
+            this.button_addBaseSalary.TabIndex = 30;
+            this.button_addBaseSalary.Text = "Add";
+            this.button_addBaseSalary.Click += new System.EventHandler(this.button_addBaseSalary_Click);
+            // 
+            // button_Update
+            // 
+            this.button_Update.BorderRadius = 20;
+            this.button_Update.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_Update.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_Update.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_Update.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_Update.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Update.ForeColor = System.Drawing.Color.White;
+            this.button_Update.Location = new System.Drawing.Point(116, 467);
+            this.button_Update.Name = "button_Update";
+            this.button_Update.Size = new System.Drawing.Size(191, 45);
+            this.button_Update.TabIndex = 31;
+            this.button_Update.Text = "Update";
+            this.button_Update.Click += new System.EventHandler(this.button_Update_Click);
+            // 
+            // comboBox_role
+            // 
+            this.comboBox_role.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_role.BorderRadius = 20;
+            this.comboBox_role.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_role.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_role.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_role.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_role.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_role.ItemHeight = 30;
+            this.comboBox_role.Items.AddRange(new object[] {
+            "Manager",
+            "FixWorker",
+            "KeepWorker"});
+            this.comboBox_role.Location = new System.Drawing.Point(398, 275);
+            this.comboBox_role.Name = "comboBox_role";
+            this.comboBox_role.Size = new System.Drawing.Size(191, 36);
+            this.comboBox_role.TabIndex = 42;
+            // 
+            // guna2CirclePictureBox6
+            // 
+            this.guna2CirclePictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
+            this.guna2CirclePictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox6.Image")));
+            this.guna2CirclePictureBox6.ImageRotate = 0F;
+            this.guna2CirclePictureBox6.Location = new System.Drawing.Point(47, 275);
+            this.guna2CirclePictureBox6.Name = "guna2CirclePictureBox6";
+            this.guna2CirclePictureBox6.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox6.Size = new System.Drawing.Size(46, 48);
+            this.guna2CirclePictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guna2CirclePictureBox6.TabIndex = 44;
+            this.guna2CirclePictureBox6.TabStop = false;
+            // 
+            // textBox_baseSalary
+            // 
+            this.textBox_baseSalary.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
+            this.textBox_baseSalary.BorderRadius = 20;
+            this.textBox_baseSalary.BorderThickness = 0;
+            this.textBox_baseSalary.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.textBox_baseSalary.DefaultText = "";
+            this.textBox_baseSalary.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.textBox_baseSalary.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.textBox_baseSalary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_baseSalary.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.textBox_baseSalary.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_baseSalary.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_baseSalary.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.textBox_baseSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.textBox_baseSalary.Location = new System.Drawing.Point(116, 275);
+            this.textBox_baseSalary.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox_baseSalary.Name = "textBox_baseSalary";
+            this.textBox_baseSalary.PasswordChar = '\0';
+            this.textBox_baseSalary.PlaceholderText = "Base Salary";
+            this.textBox_baseSalary.SelectedText = "";
+            this.textBox_baseSalary.Size = new System.Drawing.Size(191, 48);
+            this.textBox_baseSalary.TabIndex = 43;
+            // 
+            // button_payRoll
+            // 
+            this.button_payRoll.BorderRadius = 20;
+            this.button_payRoll.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_payRoll.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_payRoll.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_payRoll.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_payRoll.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_payRoll.ForeColor = System.Drawing.Color.White;
+            this.button_payRoll.Location = new System.Drawing.Point(398, 370);
+            this.button_payRoll.Name = "button_payRoll";
+            this.button_payRoll.Size = new System.Drawing.Size(191, 45);
+            this.button_payRoll.TabIndex = 45;
+            this.button_payRoll.Text = "Payroll";
+            this.button_payRoll.Click += new System.EventHandler(this.button_payRoll_Click);
             // 
             // DirectorMainForm
             // 
@@ -642,6 +787,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listFacility)).EndInit();
             this.tabPage_shift.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_listShift)).EndInit();
+            this.tabPage_salary.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_baseSalary)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -687,5 +835,13 @@
         private Guna.UI2.WinForms.Guna2Button button_addShift;
         private System.Windows.Forms.DataGridView dataGridView_listShift;
         private Guna.UI2.WinForms.Guna2Button button_reset;
+        private System.Windows.Forms.TabPage tabPage_salary;
+        private System.Windows.Forms.DataGridView dataGridView_baseSalary;
+        private Guna.UI2.WinForms.Guna2Button button_addBaseSalary;
+        private Guna.UI2.WinForms.Guna2Button button_Update;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox6;
+        private Guna.UI2.WinForms.Guna2TextBox textBox_baseSalary;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_role;
+        private Guna.UI2.WinForms.Guna2Button button_payRoll;
     }
 }

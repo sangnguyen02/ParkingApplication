@@ -54,13 +54,23 @@ namespace FinalWindow.View.Manager.WorkerCRUD
 
                         Model.FixWorker fixer = context.Users.OfType<Model.FixWorker>().Where(u => u.cardID == textBox_cardID.Text).FirstOrDefault();
 
+                        var checkcardIDman = context.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                        var checkcardIDfix = context.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                        var checkcardIDkeep = context.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+
+
+
                         if (fixer == null)
                         {
                             textBox_cardID.Text = temp;
 
-
                             MessageBox.Show("Don't exist this worker");
 
+                        }
+                        else if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
+                        {
+                            MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
                         else
                         {

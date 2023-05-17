@@ -91,14 +91,41 @@
     <Compile Include="Migrations\202305141214315_nts5.designer.cs">
       <DependentUpon>202305141214315_nts5.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202305170724514_nts6.cs" />
+    <Compile Include="Migrations\202305170724514_nts6.designer.cs">
+      <DependentUpon>202305170724514_nts6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305170731583_nts7.cs" />
+    <Compile Include="Migrations\202305170731583_nts7.designer.cs">
+      <DependentUpon>202305170731583_nts7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305170959519_nts8.cs" />
+    <Compile Include="Migrations\202305170959519_nts8.designer.cs">
+      <DependentUpon>202305170959519_nts8.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305171001106_nts9.cs" />
+    <Compile Include="Migrations\202305171001106_nts9.designer.cs">
+      <DependentUpon>202305171001106_nts9.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202305171142117_nts10.cs" />
+    <Compile Include="Migrations\202305171142117_nts10.designer.cs">
+      <DependentUpon>202305171142117_nts10.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Rule.cs" />
+    <Compile Include="Model\Salary.cs" />
     <Compile Include="Tool\CheckInput.cs" />
     <Compile Include="View\Customer\CustomerEditInformationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\Customer\CustomerEditInformationForm.Designer.cs">
       <DependentUpon>CustomerEditInformationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\CalculateSalaryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\CalculateSalaryForm.Designer.cs">
+      <DependentUpon>CalculateSalaryForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Director\DirectorEditInformationForm.cs">
       <SubType>Form</SubType>
@@ -141,6 +168,12 @@
     </Compile>
     <Compile Include="View\Director\ManagersCRUD\UpdateManagerForm.Designer.cs">
       <DependentUpon>UpdateManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Director\PayRollManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Director\PayRollManagerForm.Designer.cs">
+      <DependentUpon>PayRollManagerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\FixWorker\FixWorkerEditInformationForm.cs">
       <SubType>Form</SubType>
@@ -295,11 +328,29 @@
     <EmbeddedResource Include="Migrations\202305141214315_nts5.resx">
       <DependentUpon>202305141214315_nts5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305170724514_nts6.resx">
+      <DependentUpon>202305170724514_nts6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305170731583_nts7.resx">
+      <DependentUpon>202305170731583_nts7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305170959519_nts8.resx">
+      <DependentUpon>202305170959519_nts8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305171001106_nts9.resx">
+      <DependentUpon>202305171001106_nts9.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202305171142117_nts10.resx">
+      <DependentUpon>202305171142117_nts10.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Customer\CustomerMainForm.resx">
       <DependentUpon>CustomerMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Customer\CustomerEditInformationForm.resx">
       <DependentUpon>CustomerEditInformationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\CalculateSalaryForm.resx">
+      <DependentUpon>CalculateSalaryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Director\DirectorEditInformationForm.resx">
       <DependentUpon>DirectorEditInformationForm.cs</DependentUpon>
@@ -321,6 +372,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Director\ManagersCRUD\UpdateManagerForm.resx">
       <DependentUpon>UpdateManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Director\PayRollManagerForm.resx">
+      <DependentUpon>PayRollManagerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FixWorker\FixWorkerEditInformationForm.resx">
       <DependentUpon>FixWorkerEditInformationForm.cs</DependentUpon>

@@ -48,7 +48,8 @@ namespace FinalWindow.View.Director.List
                             CardID = u.cardID,
                             Address = u.address,
                             Picture = u.picture,
-                            FacilityID = u.facilityID
+                            FacilityID = u.facilityID,
+                            CoE = u.coefficients
                         })
                         .ToList();
 
@@ -75,14 +76,14 @@ namespace FinalWindow.View.Director.List
                 updateManagerForm.birthday_picker.Value = (DateTime)dataGridView_listManager.CurrentRow.Cells[7].Value;
                 updateManagerForm.textBox_cardID.Text = dataGridView_listManager.CurrentRow.Cells[8].Value.ToString();
                 updateManagerForm.textBox_address.Text = dataGridView_listManager.CurrentRow.Cells[9].Value.ToString();
-
+                
                 byte[] imageData = (byte[])dataGridView_listManager.CurrentRow.Cells[10].Value;
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
                     updateManagerForm.pictureBox_image.Image = Image.FromStream(ms);
                 }
                 updateManagerForm.comboBox_facilityID.SelectedItem = dataGridView_listManager.CurrentRow.Cells[11].Value;
-
+                updateManagerForm.textBox_CoE.Text = dataGridView_listManager.CurrentRow.Cells[12].Value.ToString();
 
                 updateManagerForm.Show();
             }

@@ -42,6 +42,13 @@ namespace FinalWindow.View.Director
             comboBox_facilityID.DisplayMember = "address";
             comboBox_facilityID.ValueMember = "ID";
             comboBox_facilityID.SelectedItem = 1;
+
+
+
+            comboBox_salaryrRole.DataSource = context.Salaries.ToList();
+            comboBox_salaryrRole.DisplayMember = "role";
+            comboBox_salaryrRole.ValueMember = "salaryID";
+            
         }
 
         private void button_update_Click(object sender, EventArgs e)
@@ -55,6 +62,10 @@ namespace FinalWindow.View.Director
 
                     Model.Manager manager = context.Users.OfType<Model.Manager>().Where(u => u.cardID == textBox_cardID.Text).FirstOrDefault();
 
+                    var checkcardIDman = context.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                    var checkcardIDfix = context.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                    var checkcardIDkeep = context.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+
                     if (manager == null)
                     {
                         textBox_cardID.Text = temp;
@@ -63,9 +74,13 @@ namespace FinalWindow.View.Director
                         MessageBox.Show("Don't exist this manager");
 
                     }
+                    else if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
+                    {
+                        MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
                     else
                     {
-                        
                         manager.username = textBox_username.Text;
                         manager.password = textBox_password.Text;
                         manager.picture = UpdateManagerForm.converterDemo(pictureBox_image.Image);
@@ -77,6 +92,9 @@ namespace FinalWindow.View.Director
                         manager.phone = textBox_phone.Text;
                         manager.email = textBox_email.Text;
                         manager.address = textBox_address.Text;
+                        manager.coefficients = float.Parse(textBox_CoE.Text);
+                        manager.salaryID = (int?)comboBox_salaryrRole.SelectedValue;
+                        
 
                         context.SaveChanges();
                         MessageBox.Show("Update successfully !!!");

@@ -21,6 +21,10 @@ namespace FinalWindow.Model
 
         public int? facilityID { get; set; }
         public Facility Facility { get; set; }
+        public float? coefficients { get; set; }
+        public int? salaryID { get; set; }
+        public Salary Salary { get; set; }
 
+        public float? totalSalary { get; set; }
     }
 }

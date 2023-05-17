@@ -23,5 +23,15 @@ namespace FinalWindow.Model
         public Facility Facility { get; set; }
 
         public virtual ICollection<BillFix> BillFixes { get; set; }
+
+        public float? coefficients { get; set; }
+
+        public int? salaryID { get ; set; }
+
+        public Salary Salary { get; set; }
+
+        public float? totalSalary { get; set; }
+
+
     }
 }

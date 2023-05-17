@@ -95,7 +95,8 @@
             this.checkBox_rememberMe.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.checkBox_rememberMe.CheckedState.BorderRadius = 0;
             this.checkBox_rememberMe.CheckedState.BorderThickness = 0;
-            this.checkBox_rememberMe.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.checkBox_rememberMe.CheckedState.FillColor = System.Drawing.Color.White;
+            this.checkBox_rememberMe.CheckMarkColor = System.Drawing.Color.Black;
             this.checkBox_rememberMe.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.checkBox_rememberMe.ForeColor = System.Drawing.Color.Black;
             this.checkBox_rememberMe.Location = new System.Drawing.Point(107, 250);
