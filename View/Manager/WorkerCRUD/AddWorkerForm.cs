@@ -7,9 +7,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Media.Animation;
 
 namespace FinalWindow.View.Manager.WorkerCRUD
 {
@@ -31,71 +33,73 @@ namespace FinalWindow.View.Manager.WorkerCRUD
         private void AddWorkerForm_Load(object sender, EventArgs e)
         {
             DatabaseContext context = new DatabaseContext();
-            comboBox_facilityID.DataSource = context.Facilities.ToList();
-            comboBox_facilityID.DisplayMember = "address";
-            comboBox_facilityID.ValueMember = "ID";
-            comboBox_facilityID.SelectedItem = null;
+
+
+            comboBox_salaryRole.DataSource = context.Salaries.ToList();
+            comboBox_salaryRole.DisplayMember = "role";
+            comboBox_salaryRole.ValueMember = "salaryID";
+            comboBox_salaryRole.SelectedItem = null;
         }
 
-        void loadKeepDataGridView()
-        {
-            try
-            {
-                DatabaseContext context1 = new DatabaseContext();
-                var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
-                using (var context = new DatabaseContext())
-                {
-                    var keeperData = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID)
-                        .Select(u => new
-                        {
-                            CardID = u.cardID,
-                            FisrtName = u.firstName,
-                            LastName = u.lastName,
-                            Gender = u.gender,
-                            Phone = u.phone,
-                            FacilityID = u.facilityID
+        //void loadKeepDataGridView()
+        //{
+        //    try
+        //    {
+        //        DatabaseContext context1 = new DatabaseContext();
+        //        var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
+        //        using (var context = new DatabaseContext())
+        //        {
+        //            var keeperData = context.Users.OfType<Model.KeepWorker>().Where(t => t.facilityID == manager.facilityID)
+        //                .Select(u => new
+        //                {
+        //                    CardID = u.cardID,
+        //                    FisrtName = u.firstName,
+        //                    LastName = u.lastName,
+        //                    Gender = u.gender,
+        //                    Phone = u.phone,
+        //                    FacilityID = u.facilityID
 
-                        })
-                        .ToList();
-
-
-                    ManagerMainForm managerMainForm = new ManagerMainForm();
-                    managerMainForm.dataGridView_listKeepWorker.DataSource = keeperData;
-                }
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
-        void loadFixDataGridView()
-        {
-            try
-            {
-                DatabaseContext context1 = new DatabaseContext();
-                var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
-                using (var context = new DatabaseContext())
-                {
-                    var fixerData = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID)
-                        // .Where(u => u.cardID)
-                        .Select(u => new
-                        {
-                            CardID = u.cardID,
-                            FisrtName = u.firstName,
-                            LastName = u.lastName,
-                            Gender = u.gender,
-                            Phone = u.phone,
-                            FacilityID = u.facilityID
-
-                        })
-                        .ToList();
+        //                })
+        //                .ToList();
 
 
-                    ManagerMainForm managerMainForm = new ManagerMainForm();
-                    managerMainForm.dataGridView_listFixWorker.DataSource = fixerData;
-                }
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        }
+        //            ManagerMainForm managerMainForm = new ManagerMainForm();
+        //            managerMainForm.dataGridView_listKeepWorker.DataSource = keeperData;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        //}
+        //void loadFixDataGridView()
+        //{
+        //    try
+        //    {
+        //        DatabaseContext context1 = new DatabaseContext();
+        //        var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
+        //        using (var context = new DatabaseContext())
+        //        {
+        //            var fixerData = context.Users.OfType<Model.FixWorker>().Where(t => t.facilityID == manager.facilityID)
+        //                // .Where(u => u.cardID)
+        //                .Select(u => new
+        //                {
+        //                    CardID = u.cardID,
+        //                    FisrtName = u.firstName,
+        //                    LastName = u.lastName,
+        //                    Gender = u.gender,
+        //                    Phone = u.phone,
+        //                    FacilityID = u.facilityID
+
+        //                })
+        //                .ToList();
+
+
+        //            ManagerMainForm managerMainForm = new ManagerMainForm();
+        //            managerMainForm.dataGridView_listFixWorker.DataSource = fixerData;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        //}
 
         private void pictureBox_image_Click(object sender, EventArgs e)
         {
@@ -126,8 +130,8 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                     string.IsNullOrEmpty(textBox_phone.Text) ||
                     string.IsNullOrEmpty(textBox_email.Text) ||
                     string.IsNullOrEmpty(textBox_address.Text) ||
-                    (comboBox_gender.SelectedItem == null) ||
-                    (comboBox_facilityID.SelectedItem == null))
+                    (comboBox_gender.SelectedItem == null)
+                    /*(comboBox_facilityID.SelectedItem == null)*/)
                 {
                     MessageBox.Show("Please enter all information");
                     return;
@@ -168,7 +172,6 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                             textBox_lastName.Text = "";
                             return;
                         }
-
                     }
                 }
 
@@ -187,10 +190,40 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                 var checkcardIDman = db.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
                 var checkcardIDfix = db.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
                 var checkcardIDkeep = db.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkusername = db.Users.Where(t => t.username == textBox_username.Text).Count();
+                var checkphone = db.Users.Where(t => t.phone == textBox_phone.Text).Count();
+                var checkemail = db.Users.Where(t => t.email == textBox_email.Text).Count();
 
-                if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
+                if (checkusername > 0)
                 {
-                    MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Username has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkphone > 0)
+                {
+                    MessageBox.Show("Phone has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkemail > 0)
+                {
+                    MessageBox.Show("Email has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+                if (checkcardIDman > 0)
+                {
+                    MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkcardIDfix > 0)
+                {
+                    MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkcardIDkeep > 0)
+                {
+                    MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -204,10 +237,11 @@ namespace FinalWindow.View.Manager.WorkerCRUD
 
                 if(comboBox_typeWorker.SelectedIndex == 0)
                 {
+                    var manager = db.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                     var fixWorker = new Model.FixWorker
                     {
                         cardID = textBox_cardID.Text,
-                        facilityID = Convert.ToInt32(comboBox_facilityID.SelectedValue.ToString()),
+                        facilityID = manager.facilityID,
                         username = textBox_username.Text,
                         password = textBox_password.Text,
                         firstName = textBox_firstName.Text,
@@ -218,7 +252,10 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                         address = textBox_address.Text,
                         birthday = birthday_picker.Value.Date,
                         picture = converterDemo(pictureBox_image.Image),
-                        coefficients = 1
+                        coefficients = 1,
+                        salaryID = (int)comboBox_salaryRole.SelectedValue,
+                        active = true
+                      
 
                     };
                     try
@@ -233,10 +270,11 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                 }
                 else if (comboBox_typeWorker.SelectedIndex == 1)
                 {
+                    var manager = db.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                     var keepWorker = new Model.KeepWorker
                     {
                         cardID = textBox_cardID.Text,
-                        facilityID = Convert.ToInt32(comboBox_facilityID.SelectedValue.ToString()),
+                        facilityID = manager.facilityID,
                         username = textBox_username.Text,
                         password = textBox_password.Text,
                         firstName = textBox_firstName.Text,
@@ -247,7 +285,9 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                         address = textBox_address.Text,
                         birthday = birthday_picker.Value.Date,
                         picture = converterDemo(pictureBox_image.Image),
-                        coefficients = 1
+                        coefficients = 1,
+                        salaryID = (int)comboBox_salaryRole.SelectedValue,
+                        active = true
 
                     };
                     try

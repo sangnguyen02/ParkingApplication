@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddWorkerForm));
             this.textBox_password = new Guna.UI2.WinForms.Guna2TextBox();
-            this.comboBox_facilityID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.birthday_picker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_cardID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -51,6 +50,7 @@
             this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.comboBox_typeWorker = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.comboBox_salaryRole = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -84,22 +84,6 @@
             this.textBox_password.SelectedText = "";
             this.textBox_password.Size = new System.Drawing.Size(210, 43);
             this.textBox_password.TabIndex = 44;
-            // 
-            // comboBox_facilityID
-            // 
-            this.comboBox_facilityID.BackColor = System.Drawing.Color.Transparent;
-            this.comboBox_facilityID.BorderRadius = 20;
-            this.comboBox_facilityID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox_facilityID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_facilityID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_facilityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_facilityID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_facilityID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBox_facilityID.ItemHeight = 30;
-            this.comboBox_facilityID.Location = new System.Drawing.Point(320, 23);
-            this.comboBox_facilityID.Name = "comboBox_facilityID";
-            this.comboBox_facilityID.Size = new System.Drawing.Size(201, 36);
-            this.comboBox_facilityID.TabIndex = 41;
             // 
             // birthday_picker
             // 
@@ -430,7 +414,7 @@
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.guna2GroupBox1.BorderRadius = 20;
-            this.guna2GroupBox1.Controls.Add(this.comboBox_facilityID);
+            this.guna2GroupBox1.Controls.Add(this.comboBox_salaryRole);
             this.guna2GroupBox1.Controls.Add(this.birthday_picker);
             this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox6);
             this.guna2GroupBox1.Controls.Add(this.textBox_cardID);
@@ -474,6 +458,22 @@
             this.comboBox_typeWorker.Size = new System.Drawing.Size(246, 36);
             this.comboBox_typeWorker.TabIndex = 42;
             // 
+            // comboBox_salaryRole
+            // 
+            this.comboBox_salaryRole.BackColor = System.Drawing.Color.Transparent;
+            this.comboBox_salaryRole.BorderRadius = 20;
+            this.comboBox_salaryRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.comboBox_salaryRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_salaryRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_salaryRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.comboBox_salaryRole.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_salaryRole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.comboBox_salaryRole.ItemHeight = 30;
+            this.comboBox_salaryRole.Location = new System.Drawing.Point(320, 23);
+            this.comboBox_salaryRole.Name = "comboBox_salaryRole";
+            this.comboBox_salaryRole.Size = new System.Drawing.Size(201, 36);
+            this.comboBox_salaryRole.TabIndex = 41;
+            // 
             // AddWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -506,7 +506,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2TextBox textBox_password;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBox_facilityID;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthday_picker;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox6;
         private Guna.UI2.WinForms.Guna2TextBox textBox_cardID;
@@ -527,5 +526,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         public Guna.UI2.WinForms.Guna2ComboBox comboBox_typeWorker;
+        private Guna.UI2.WinForms.Guna2ComboBox comboBox_salaryRole;
     }
 }

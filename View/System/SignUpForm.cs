@@ -15,7 +15,7 @@ namespace FinalWindow
 {
     public partial class SignUpForm : Form
     {
-        private bool checkAccount = true;
+       
         public SignUpForm()
         {
             InitializeComponent();
@@ -78,12 +78,7 @@ namespace FinalWindow
             }
 
 
-            if (checkAccount == false)
-            {
-                MessageBox.Show("Please satisfy the warnings");
-                return;
-
-            }
+            
 
             User newCus = new Customer
             {
@@ -120,8 +115,8 @@ namespace FinalWindow
                 var checkUser = context.Users.Where(t => t.username == textBox_Username.Text).Count();
                 if (checkUser > 0)
                 {
-                    errorProvider_username.SetError(this.textBox_Username, "Username has been used");
-                    checkAccount = false;
+                    MessageBox.Show("Your username has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    
                 }    
                 
             }
@@ -129,45 +124,45 @@ namespace FinalWindow
 
         private void textBox_email_Leave(object sender, EventArgs e)
         {
-            if (CheckInput.checkEmailIsValid(textBox_email.Text) == false)
-            {
-                errorProvider_email.SetError(this.textBox_email, "Email is invalid");
-                checkAccount = false;
-            }
-            else
-            {
-                DatabaseContext context = new DatabaseContext();
-                var checkEmail = context.Users.Where(t => t.email == textBox_email.Text).Count();
-                if (checkEmail > 0)
-                {
-                    errorProvider_email.SetError(this.textBox_email, "Email has been used");
-                    checkAccount = false;
-                }
-                else
-                {
-                    errorProvider_email = null;
-                    checkAccount = true;
-                }
-            }
+            //if (CheckInput.checkEmailIsValid(textBox_email.Text) == false)
+            //{
+            //    errorProvider_email.SetError(this.textBox_email, "Email is invalid");
+            //    checkAccount = false;
+            //}
+            //else
+            //{
+            //    DatabaseContext context = new DatabaseContext();
+            //    var checkEmail = context.Users.Where(t => t.email == textBox_email.Text).Count();
+            //    if (checkEmail > 0)
+            //    {
+            //        errorProvider_email.SetError(this.textBox_email, "Email has been used");
+            //        checkAccount = false;
+            //    }
+            //    else
+            //    {
+            //        errorProvider_email = null;
+            //        checkAccount = true;
+            //    }
+            //}
         }
 
         private void textbox_phone_Leave(object sender, EventArgs e)
         {
-            if (CheckInput.IsPhoneNbr(textbox_phone.Text) == false)
-            {
-                errorProvider_phone.SetError(this.textbox_phone, "Phone is invalid");
-                checkAccount = false;
-            }
-            else
-            {
-                DatabaseContext context = new DatabaseContext();
-                var checkPhone = context.Users.Where(t => t.phone == textbox_phone.Text).Count();
-                if (checkPhone > 0)
-                {
-                    errorProvider_phone.SetError(this.textbox_phone, "Phone has been used");
-                    checkAccount = false;
-                }
-            }
+        //    if (CheckInput.IsPhoneNbr(textbox_phone.Text) == false)
+        //    {
+        //        errorProvider_phone.SetError(this.textbox_phone, "Phone is invalid");
+        //        checkAccount = false;
+        //    }
+        //    else
+        //    {
+        //        DatabaseContext context = new DatabaseContext();
+        //        var checkPhone = context.Users.Where(t => t.phone == textbox_phone.Text).Count();
+        //        if (checkPhone > 0)
+        //        {
+        //            errorProvider_phone.SetError(this.textbox_phone, "Phone has been used");
+        //            checkAccount = false;
+        //        }
+        //    }
         }
     }
 }

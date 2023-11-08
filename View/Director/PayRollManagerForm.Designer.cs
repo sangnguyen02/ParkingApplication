@@ -41,7 +41,7 @@
             this.dataGridView_listManager.Name = "dataGridView_listManager";
             this.dataGridView_listManager.RowHeadersWidth = 51;
             this.dataGridView_listManager.RowTemplate.Height = 24;
-            this.dataGridView_listManager.Size = new System.Drawing.Size(776, 248);
+            this.dataGridView_listManager.Size = new System.Drawing.Size(887, 248);
             this.dataGridView_listManager.TabIndex = 0;
             this.dataGridView_listManager.Click += new System.EventHandler(this.dataGridView_listManager_Click);
             // 
@@ -77,7 +77,7 @@
             this.button_resetPayroll.ForeColor = System.Drawing.Color.White;
             this.button_resetPayroll.Location = new System.Drawing.Point(12, 368);
             this.button_resetPayroll.Name = "button_resetPayroll";
-            this.button_resetPayroll.Size = new System.Drawing.Size(92, 32);
+            this.button_resetPayroll.Size = new System.Drawing.Size(191, 32);
             this.button_resetPayroll.TabIndex = 44;
             this.button_resetPayroll.Text = "Reset";
             this.button_resetPayroll.Click += new System.EventHandler(this.button_resetPayroll_Click);
@@ -87,7 +87,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(911, 450);
             this.Controls.Add(this.button_resetPayroll);
             this.Controls.Add(this.comboBox_facilityAddress);
             this.Controls.Add(this.dataGridView_listManager);

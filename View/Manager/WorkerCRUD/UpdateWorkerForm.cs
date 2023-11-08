@@ -1,4 +1,5 @@
 ﻿using FinalWindow.Database;
+using FinalWindow.Model;
 using FinalWindow.View.Director;
 using FinalWindow.View.Manager.ListWorker;
 using System;
@@ -47,6 +48,7 @@ namespace FinalWindow.View.Manager.WorkerCRUD
             try
             {
                 DatabaseContext context = new DatabaseContext();
+
                 if(comboBox_typeWorker.SelectedIndex == 0 )
                 {
                     try
@@ -57,7 +59,42 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                         var checkcardIDman = context.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
                         var checkcardIDfix = context.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
                         var checkcardIDkeep = context.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                        var checkusername = context.Users.Where(t => t.username == textBox_username.Text).Count();
+                        var checkphone = context.Users.Where(t => t.phone == textBox_phone.Text).Count();
+                        var checkemail = context.Users.Where(t => t.email == textBox_email.Text).Count();
 
+                        if (checkusername > 0)
+                        {
+                            MessageBox.Show("Username has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (checkphone > 0)
+                        {
+                            MessageBox.Show("Phone has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (checkemail > 0)
+                        {
+                            MessageBox.Show("Email has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
+
+                        if (checkcardIDman > 0)
+                        {
+                            MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (checkcardIDfix > 0)
+                        {
+                            MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (checkcardIDkeep > 0)
+                        {
+                            MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
 
 
                         if (fixer == null)
@@ -67,18 +104,13 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                             MessageBox.Show("Don't exist this worker");
 
                         }
-                        else if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
-                        {
-                            MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            return;
-                        }
+                        
                         else
                         {
 
                             fixer.username = textBox_username.Text;
                             fixer.password = textBox_password.Text;
                             fixer.picture = UpdateManagerForm.converterDemo(pictureBox_image.Image);
-                            fixer.facilityID = (int?)comboBox_facilityID.SelectedValue;
                             fixer.firstName = textBox_firstName.Text;
                             fixer.lastName = textBox_lastName.Text;
                             fixer.gender = comboBox_gender.SelectedItem.ToString();
@@ -86,6 +118,16 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                             fixer.phone = textBox_phone.Text;
                             fixer.email = textBox_email.Text;
                             fixer.address = textBox_address.Text;
+                            fixer.coefficients = float.Parse(textBox_CoE.Text);
+                            fixer.salaryID = (int?)comboBox_salaryrRole.SelectedValue;
+                            if (checkBox_status.Checked)
+                            {
+                                fixer.active = true;
+                            }
+                            else
+                            {
+                                fixer.active = false;
+                            }
 
                             context.SaveChanges();
                             MessageBox.Show("Update successfully !!!");
@@ -93,9 +135,9 @@ namespace FinalWindow.View.Manager.WorkerCRUD
 
 
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Cannot update !!");
+                        
                     }
                 }
                 else if(comboBox_typeWorker.SelectedIndex == 1)
@@ -103,6 +145,26 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                     try
                     {
                         Model.KeepWorker keeper = context.Users.OfType<Model.KeepWorker>().Where(u => u.cardID == textBox_cardID.Text).FirstOrDefault();
+                        var checkcardIDman = context.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                        var checkcardIDfix = context.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                        var checkcardIDkeep = context.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+
+                        if (checkcardIDman > 0)
+                        {
+                            MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (checkcardIDfix > 0)
+                        {
+                            MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                        if (checkcardIDkeep > 0)
+                        {
+                            MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
 
                         if (keeper == null)
                         {
@@ -118,7 +180,7 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                             keeper.username = textBox_username.Text;
                             keeper.password = textBox_password.Text;
                             keeper.picture = UpdateManagerForm.converterDemo(pictureBox_image.Image);
-                            keeper.facilityID = (int?)comboBox_facilityID.SelectedValue;
+                            keeper.facilityID = (int?)comboBox_salaryrRole.SelectedValue;
                             keeper.firstName = textBox_firstName.Text;
                             keeper.lastName = textBox_lastName.Text;
                             keeper.gender = comboBox_gender.SelectedItem.ToString();
@@ -126,6 +188,16 @@ namespace FinalWindow.View.Manager.WorkerCRUD
                             keeper.phone = textBox_phone.Text;
                             keeper.email = textBox_email.Text;
                             keeper.address = textBox_address.Text;
+                            keeper.coefficients = float.Parse(textBox_CoE.Text);
+                            keeper.salaryID = (int?)comboBox_salaryrRole.SelectedValue;
+                            if (checkBox_status.Checked)
+                            {
+                                keeper.active = true;
+                            }
+                            else
+                            {
+                                keeper.active = false;
+                            }
 
                             context.SaveChanges();
                             MessageBox.Show("Update successfully !!!");
@@ -148,10 +220,9 @@ namespace FinalWindow.View.Manager.WorkerCRUD
         private void UpdateWorkerForm_Load(object sender, EventArgs e)
         {
             DatabaseContext context = new DatabaseContext();
-            comboBox_facilityID.DataSource = context.Facilities.ToList();
-            comboBox_facilityID.DisplayMember = "address";
-            comboBox_facilityID.ValueMember = "ID";
-            comboBox_facilityID.SelectedItem = null;
+            comboBox_salaryrRole.DataSource = context.Salaries.ToList();
+            comboBox_salaryrRole.DisplayMember = "role";
+            comboBox_salaryrRole.ValueMember = "salaryID";
         }
     }
 }

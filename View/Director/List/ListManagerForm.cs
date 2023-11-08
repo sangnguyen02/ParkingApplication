@@ -49,7 +49,8 @@ namespace FinalWindow.View.Director.List
                             Address = u.address,
                             Picture = u.picture,
                             FacilityID = u.facilityID,
-                            CoE = u.coefficients
+                            CoE = u.coefficients,
+                            Status = u.active.ToString()
                         })
                         .ToList();
 
@@ -84,6 +85,14 @@ namespace FinalWindow.View.Director.List
                 }
                 updateManagerForm.comboBox_facilityID.SelectedItem = dataGridView_listManager.CurrentRow.Cells[11].Value;
                 updateManagerForm.textBox_CoE.Text = dataGridView_listManager.CurrentRow.Cells[12].Value.ToString();
+                if(dataGridView_listManager.CurrentRow.Cells[13].Value.ToString() == "True")
+                {
+                    updateManagerForm.checkBox_status.Checked = true;
+                }
+                else
+                {
+                    updateManagerForm.checkBox_status.Checked = false;
+                }
 
                 updateManagerForm.Show();
             }

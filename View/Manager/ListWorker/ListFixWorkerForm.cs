@@ -35,8 +35,9 @@ namespace FinalWindow.View.Manager.ListWorker
             {
                 using (var context = new DatabaseContext())
                 {
+                    var manager = context.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                     var fixerData = context.Users
-                        .OfType<Model.FixWorker>()
+                        .OfType<Model.FixWorker>().Where(t=>t.facilityID == manager.facilityID)
                         .Select(u => new
                         {
                             Username = u.username,
@@ -50,7 +51,9 @@ namespace FinalWindow.View.Manager.ListWorker
                             CardID = u.cardID,
                             Address = u.address,
                             Picture = u.picture,
-                            FacilityID = u.facilityID
+                            CoE = u.coefficients,
+                            SalaryID = u.salaryID,
+                            Status = u.active.ToString()
                         })
                         .ToList();
 
@@ -65,28 +68,37 @@ namespace FinalWindow.View.Manager.ListWorker
         {
             try
             {
-                UpdateWorkerForm updateManagerForm = new UpdateWorkerForm();
+                UpdateWorkerForm updateWorkerForm = new UpdateWorkerForm();
 
-                updateManagerForm.textBox_username.Text = dataGridView_listFixWorker.CurrentRow.Cells[0].Value.ToString();
-                updateManagerForm.textBox_password.Text = dataGridView_listFixWorker.CurrentRow.Cells[1].Value.ToString();
-                updateManagerForm.textBox_firstName.Text = dataGridView_listFixWorker.CurrentRow.Cells[2].Value.ToString();
-                updateManagerForm.textBox_lastName.Text = dataGridView_listFixWorker.CurrentRow.Cells[3].Value.ToString();
-                updateManagerForm.comboBox_gender.SelectedItem = dataGridView_listFixWorker.CurrentRow.Cells[4].Value;
-                updateManagerForm.textBox_phone.Text = dataGridView_listFixWorker.CurrentRow.Cells[5].Value.ToString();
-                updateManagerForm.textBox_email.Text = dataGridView_listFixWorker.CurrentRow.Cells[6].Value.ToString();
-                updateManagerForm.birthday_picker.Value = (DateTime)dataGridView_listFixWorker.CurrentRow.Cells[7].Value;
-                updateManagerForm.textBox_cardID.Text = dataGridView_listFixWorker.CurrentRow.Cells[8].Value.ToString();
-                updateManagerForm.textBox_address.Text = dataGridView_listFixWorker.CurrentRow.Cells[9].Value.ToString();
+                updateWorkerForm.textBox_username.Text = dataGridView_listFixWorker.CurrentRow.Cells[0].Value.ToString();
+                updateWorkerForm.textBox_password.Text = dataGridView_listFixWorker.CurrentRow.Cells[1].Value.ToString();
+                updateWorkerForm.textBox_firstName.Text = dataGridView_listFixWorker.CurrentRow.Cells[2].Value.ToString();
+                updateWorkerForm.textBox_lastName.Text = dataGridView_listFixWorker.CurrentRow.Cells[3].Value.ToString();
+                updateWorkerForm.comboBox_gender.SelectedItem = dataGridView_listFixWorker.CurrentRow.Cells[4].Value;
+                updateWorkerForm.textBox_phone.Text = dataGridView_listFixWorker.CurrentRow.Cells[5].Value.ToString();
+                updateWorkerForm.textBox_email.Text = dataGridView_listFixWorker.CurrentRow.Cells[6].Value.ToString();
+                updateWorkerForm.birthday_picker.Value = (DateTime)dataGridView_listFixWorker.CurrentRow.Cells[7].Value;
+                updateWorkerForm.textBox_cardID.Text = dataGridView_listFixWorker.CurrentRow.Cells[8].Value.ToString();
+                updateWorkerForm.textBox_address.Text = dataGridView_listFixWorker.CurrentRow.Cells[9].Value.ToString();
 
                 byte[] imageData = (byte[])dataGridView_listFixWorker.CurrentRow.Cells[10].Value;
                 using (MemoryStream ms = new MemoryStream(imageData))
                 {
-                    updateManagerForm.pictureBox_image.Image = Image.FromStream(ms);
+                    updateWorkerForm.pictureBox_image.Image = Image.FromStream(ms);
                 }
-                updateManagerForm.comboBox_facilityID.SelectedItem = dataGridView_listFixWorker.CurrentRow.Cells[11].Value;
-                updateManagerForm.comboBox_typeWorker.SelectedIndex = 0;
+                updateWorkerForm.textBox_CoE.Text = dataGridView_listFixWorker.CurrentRow.Cells[11].Value.ToString();
+                updateWorkerForm.comboBox_salaryrRole.SelectedItem = dataGridView_listFixWorker.CurrentRow.Cells[12].Value;
+                if (dataGridView_listFixWorker.CurrentRow.Cells[13].Value.ToString() == "True")
+                {
+                    updateWorkerForm.checkBox_status.Checked = true;
+                }
+                else
+                {
+                    updateWorkerForm.checkBox_status.Checked = false;
+                }
+                updateWorkerForm.comboBox_typeWorker.SelectedIndex = 0;
 
-                updateManagerForm.Show();
+                updateWorkerForm.Show();
                 this.Close();
             }
             catch (Exception ex)

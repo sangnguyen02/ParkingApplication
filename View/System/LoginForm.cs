@@ -76,71 +76,117 @@ namespace FinalWindow
                     return;
                 }
 
-                var checkUser = databaseContext.Users.Where(t => t.username == username && t.password == password).Count();
+                
 
                 if (role == "4")
                 {
+                    var checkUser = databaseContext.Users.OfType<Model.Director>().Where(t => t.username == username && t.password == password).Count();
                     if (checkUser > 0)
                     {
-                        Director director = databaseContext.Users.OfType<Director>().Where(f => f.username == username).FirstOrDefault();
-                        // Login successful, show the main form
-                        DirectorMainForm mainFormm = new DirectorMainForm();
-                        DirectorMainForm.DirID = director.ID;
+                        try
+                        {
+                            Director director = databaseContext.Users.OfType<Director>().Where(f => f.username == username).FirstOrDefault();
+                            // Login successful, show the main form
+                            DirectorMainForm mainFormm = new DirectorMainForm();
+                            DirectorMainForm.DirID = director.ID;
 
-                        mainFormm.Show();
+                            mainFormm.Show();
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                        
 
 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account does not exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
                 else if (role == "3")
                 {
+                    var checkUser = databaseContext.Users.OfType<Model.Manager>().Where(t => t.username == username && t.password == password).Count();
                     if (checkUser > 0)
                     {
-                        Manager manager = databaseContext.Users.OfType<Manager>().Where(f => f.username == username).FirstOrDefault();
-                        // Login successful, show the main form
-                        ManagerMainForm mainFormm = new ManagerMainForm();
-                        ManagerMainForm.ManID = manager.ID;
-                        mainFormm.Show();
-
+                        try
+                        {
+                            Manager manager = databaseContext.Users.OfType<Manager>().Where(f => f.username == username).FirstOrDefault();
+                            // Login successful, show the main form
+                            ManagerMainForm mainFormm = new ManagerMainForm();
+                            ManagerMainForm.ManID = manager.ID;
+                            mainFormm.Show();
+                        }
+                        catch(Exception ex) { MessageBox.Show(ex.Message); return; }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account does not exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
                 else if (role == "0")
                 {
+                    var checkUser = databaseContext.Users.OfType<Model.Customer>().Where(t => t.username == username && t.password == password).Count();
                     if (checkUser > 0)
                     {
-                        Customer customer = databaseContext.Users.OfType<Customer>().Where(f => f.username == username).FirstOrDefault();
-                        // Login successful, show the main form
-                        CustomerMainForm customerMainFormm = new CustomerMainForm();
-                        CustomerMainForm.CusID = customer.ID;
-                        customerMainFormm.Show();
+                        try
+                        {
+                            Customer customer = databaseContext.Users.OfType<Customer>().Where(f => f.username == username).FirstOrDefault();
+                            // Login successful, show the main form
+                            CustomerMainForm customerMainFormm = new CustomerMainForm();
+                            CustomerMainForm.CusID = customer.ID;
+                            customerMainFormm.Show();
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); return; }
 
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account does not exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
                 else if (role == "1")
                 {
+                    var checkUser = databaseContext.Users.OfType<Model.FixWorker>().Where(t => t.username == username && t.password == password).Count();
                     if (checkUser > 0)
                     {
-                        FixWorker fixer = databaseContext.Users.OfType<FixWorker>().Where(f => f.username == username).FirstOrDefault();
-                        // Login successful, show the main form
-                        FixWorkerMainForm mainFormm = new FixWorkerMainForm();
-                        FixWorkerMainForm.FixID = fixer.ID;
-                        mainFormm.Show();
-
+                        try
+                        {
+                            FixWorker fixer = databaseContext.Users.OfType<FixWorker>().Where(f => f.username == username).FirstOrDefault();
+                            // Login successful, show the main form
+                            FixWorkerMainForm mainFormm = new FixWorkerMainForm();
+                            FixWorkerMainForm.FixID = fixer.ID;
+                            mainFormm.Show();
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account does not exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
 
                 else if (role == "2")
                 {
+                    var checkUser = databaseContext.Users.OfType<Model.KeepWorker>().Where(t => t.username == username && t.password == password).Count();
                     if (checkUser > 0)
                     {
-                        KeepWorker keeper = databaseContext.Users.OfType<KeepWorker>().Where(f => f.username == username).FirstOrDefault();
-                        // Login successful, show the main form
-                        KeepWorkerMainForm mainFormm = new KeepWorkerMainForm();
-                        KeepWorkerMainForm.KeepID = keeper.ID;
-                        mainFormm.Show();
+                        try
+                        {
+                            KeepWorker keeper = databaseContext.Users.OfType<KeepWorker>().Where(f => f.username == username).FirstOrDefault();
+                            // Login successful, show the main form
+                            KeepWorkerMainForm mainFormm = new KeepWorkerMainForm();
+                            KeepWorkerMainForm.KeepID = keeper.ID;
+                            mainFormm.Show();
+                        }
+                        catch (Exception ex) { MessageBox.Show(ex.Message); return; }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account does not exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 //else if(comboBox_role.SelectedItem ==  null)

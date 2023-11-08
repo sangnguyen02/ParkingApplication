@@ -30,6 +30,7 @@
         {
             this.tabControl_manager = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage_profile = new System.Windows.Forms.TabPage();
+            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
             this.button_editInformation = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label_birthDate = new System.Windows.Forms.Label();
@@ -53,19 +54,18 @@
             this.tabControl_typeWorker = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage_fixWorker = new System.Windows.Forms.TabPage();
             this.button_shiftFix = new Guna.UI2.WinForms.Guna2Button();
-            this.button_removeFixWorker = new Guna.UI2.WinForms.Guna2Button();
             this.button_updateFixWorker = new Guna.UI2.WinForms.Guna2Button();
             this.button_resetFix = new Guna.UI2.WinForms.Guna2Button();
             this.button_addFixWorker = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView_listFixWorker = new System.Windows.Forms.DataGridView();
             this.tabPage_keepWorker = new System.Windows.Forms.TabPage();
             this.button_shiftKeep = new Guna.UI2.WinForms.Guna2Button();
-            this.button_removeKeepWorker = new Guna.UI2.WinForms.Guna2Button();
             this.button_updateKeepWorker = new Guna.UI2.WinForms.Guna2Button();
             this.button_resetKeep = new Guna.UI2.WinForms.Guna2Button();
             this.button_addKeepWorker = new Guna.UI2.WinForms.Guna2Button();
             this.dataGridView_listKeepWorker = new System.Windows.Forms.DataGridView();
-            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
+            this.button_payRollfix = new Guna.UI2.WinForms.Guna2Button();
+            this.button_payrollkeep = new Guna.UI2.WinForms.Guna2Button();
             this.tabControl_manager.SuspendLayout();
             this.tabPage_profile.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -121,6 +121,22 @@
             this.tabPage_profile.Size = new System.Drawing.Size(845, 603);
             this.tabPage_profile.TabIndex = 0;
             this.tabPage_profile.Text = "Profile";
+            // 
+            // button_reset
+            // 
+            this.button_reset.BorderRadius = 20;
+            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reset.ForeColor = System.Drawing.Color.White;
+            this.button_reset.Location = new System.Drawing.Point(6, 548);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(95, 34);
+            this.button_reset.TabIndex = 5;
+            this.button_reset.Text = "Reset";
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // button_editInformation
             // 
@@ -396,8 +412,8 @@
             // tabPage_fixWorker
             // 
             this.tabPage_fixWorker.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tabPage_fixWorker.Controls.Add(this.button_payRollfix);
             this.tabPage_fixWorker.Controls.Add(this.button_shiftFix);
-            this.tabPage_fixWorker.Controls.Add(this.button_removeFixWorker);
             this.tabPage_fixWorker.Controls.Add(this.button_updateFixWorker);
             this.tabPage_fixWorker.Controls.Add(this.button_resetFix);
             this.tabPage_fixWorker.Controls.Add(this.button_addFixWorker);
@@ -419,28 +435,12 @@
             this.button_shiftFix.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.button_shiftFix.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_shiftFix.ForeColor = System.Drawing.Color.White;
-            this.button_shiftFix.Location = new System.Drawing.Point(510, 371);
+            this.button_shiftFix.Location = new System.Drawing.Point(472, 369);
             this.button_shiftFix.Name = "button_shiftFix";
             this.button_shiftFix.Size = new System.Drawing.Size(222, 47);
             this.button_shiftFix.TabIndex = 14;
             this.button_shiftFix.Text = "Shift Work";
             this.button_shiftFix.Click += new System.EventHandler(this.button_shiftFix_Click);
-            // 
-            // button_removeFixWorker
-            // 
-            this.button_removeFixWorker.BorderRadius = 20;
-            this.button_removeFixWorker.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_removeFixWorker.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_removeFixWorker.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_removeFixWorker.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_removeFixWorker.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.button_removeFixWorker.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_removeFixWorker.ForeColor = System.Drawing.Color.White;
-            this.button_removeFixWorker.Location = new System.Drawing.Point(270, 439);
-            this.button_removeFixWorker.Name = "button_removeFixWorker";
-            this.button_removeFixWorker.Size = new System.Drawing.Size(222, 47);
-            this.button_removeFixWorker.TabIndex = 7;
-            this.button_removeFixWorker.Text = "Remove Worker";
             // 
             // button_updateFixWorker
             // 
@@ -452,7 +452,7 @@
             this.button_updateFixWorker.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.button_updateFixWorker.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_updateFixWorker.ForeColor = System.Drawing.Color.White;
-            this.button_updateFixWorker.Location = new System.Drawing.Point(510, 439);
+            this.button_updateFixWorker.Location = new System.Drawing.Point(472, 439);
             this.button_updateFixWorker.Name = "button_updateFixWorker";
             this.button_updateFixWorker.Size = new System.Drawing.Size(222, 47);
             this.button_updateFixWorker.TabIndex = 9;
@@ -486,7 +486,7 @@
             this.button_addFixWorker.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.button_addFixWorker.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addFixWorker.ForeColor = System.Drawing.Color.White;
-            this.button_addFixWorker.Location = new System.Drawing.Point(28, 439);
+            this.button_addFixWorker.Location = new System.Drawing.Point(179, 439);
             this.button_addFixWorker.Name = "button_addFixWorker";
             this.button_addFixWorker.Size = new System.Drawing.Size(222, 47);
             this.button_addFixWorker.TabIndex = 6;
@@ -506,8 +506,8 @@
             // tabPage_keepWorker
             // 
             this.tabPage_keepWorker.BackColor = System.Drawing.SystemColors.Highlight;
+            this.tabPage_keepWorker.Controls.Add(this.button_payrollkeep);
             this.tabPage_keepWorker.Controls.Add(this.button_shiftKeep);
-            this.tabPage_keepWorker.Controls.Add(this.button_removeKeepWorker);
             this.tabPage_keepWorker.Controls.Add(this.button_updateKeepWorker);
             this.tabPage_keepWorker.Controls.Add(this.button_resetKeep);
             this.tabPage_keepWorker.Controls.Add(this.button_addKeepWorker);
@@ -529,28 +529,12 @@
             this.button_shiftKeep.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.button_shiftKeep.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_shiftKeep.ForeColor = System.Drawing.Color.White;
-            this.button_shiftKeep.Location = new System.Drawing.Point(503, 371);
+            this.button_shiftKeep.Location = new System.Drawing.Point(466, 371);
             this.button_shiftKeep.Name = "button_shiftKeep";
             this.button_shiftKeep.Size = new System.Drawing.Size(222, 47);
             this.button_shiftKeep.TabIndex = 15;
             this.button_shiftKeep.Text = "Shift Work";
             this.button_shiftKeep.Click += new System.EventHandler(this.button_shiftKeep_Click);
-            // 
-            // button_removeKeepWorker
-            // 
-            this.button_removeKeepWorker.BorderRadius = 20;
-            this.button_removeKeepWorker.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_removeKeepWorker.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_removeKeepWorker.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_removeKeepWorker.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_removeKeepWorker.FillColor = System.Drawing.Color.MediumSeaGreen;
-            this.button_removeKeepWorker.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_removeKeepWorker.ForeColor = System.Drawing.Color.White;
-            this.button_removeKeepWorker.Location = new System.Drawing.Point(262, 443);
-            this.button_removeKeepWorker.Name = "button_removeKeepWorker";
-            this.button_removeKeepWorker.Size = new System.Drawing.Size(222, 47);
-            this.button_removeKeepWorker.TabIndex = 12;
-            this.button_removeKeepWorker.Text = "Remove Worker";
             // 
             // button_updateKeepWorker
             // 
@@ -562,7 +546,7 @@
             this.button_updateKeepWorker.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.button_updateKeepWorker.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_updateKeepWorker.ForeColor = System.Drawing.Color.White;
-            this.button_updateKeepWorker.Location = new System.Drawing.Point(503, 443);
+            this.button_updateKeepWorker.Location = new System.Drawing.Point(466, 443);
             this.button_updateKeepWorker.Name = "button_updateKeepWorker";
             this.button_updateKeepWorker.Size = new System.Drawing.Size(222, 47);
             this.button_updateKeepWorker.TabIndex = 14;
@@ -596,7 +580,7 @@
             this.button_addKeepWorker.FillColor = System.Drawing.Color.MediumSeaGreen;
             this.button_addKeepWorker.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_addKeepWorker.ForeColor = System.Drawing.Color.White;
-            this.button_addKeepWorker.Location = new System.Drawing.Point(22, 443);
+            this.button_addKeepWorker.Location = new System.Drawing.Point(181, 443);
             this.button_addKeepWorker.Name = "button_addKeepWorker";
             this.button_addKeepWorker.Size = new System.Drawing.Size(222, 47);
             this.button_addKeepWorker.TabIndex = 11;
@@ -613,21 +597,39 @@
             this.dataGridView_listKeepWorker.Size = new System.Drawing.Size(666, 335);
             this.dataGridView_listKeepWorker.TabIndex = 10;
             // 
-            // button_reset
+            // button_payRollfix
             // 
-            this.button_reset.BorderRadius = 20;
-            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(6, 548);
-            this.button_reset.Name = "button_reset";
-            this.button_reset.Size = new System.Drawing.Size(95, 34);
-            this.button_reset.TabIndex = 5;
-            this.button_reset.Text = "Reset";
-            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            this.button_payRollfix.BorderRadius = 20;
+            this.button_payRollfix.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_payRollfix.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_payRollfix.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_payRollfix.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_payRollfix.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.button_payRollfix.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_payRollfix.ForeColor = System.Drawing.Color.White;
+            this.button_payRollfix.Location = new System.Drawing.Point(179, 371);
+            this.button_payRollfix.Name = "button_payRollfix";
+            this.button_payRollfix.Size = new System.Drawing.Size(222, 45);
+            this.button_payRollfix.TabIndex = 46;
+            this.button_payRollfix.Text = "Payroll";
+            this.button_payRollfix.Click += new System.EventHandler(this.button_payRollfix_Click);
+            // 
+            // button_payrollkeep
+            // 
+            this.button_payrollkeep.BorderRadius = 20;
+            this.button_payrollkeep.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_payrollkeep.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_payrollkeep.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_payrollkeep.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_payrollkeep.FillColor = System.Drawing.Color.MediumSeaGreen;
+            this.button_payrollkeep.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_payrollkeep.ForeColor = System.Drawing.Color.White;
+            this.button_payrollkeep.Location = new System.Drawing.Point(181, 373);
+            this.button_payrollkeep.Name = "button_payrollkeep";
+            this.button_payrollkeep.Size = new System.Drawing.Size(222, 45);
+            this.button_payrollkeep.TabIndex = 47;
+            this.button_payrollkeep.Text = "Payroll";
+            this.button_payrollkeep.Click += new System.EventHandler(this.button_payrollkeep_Click);
             // 
             // ManagerMainForm
             // 
@@ -680,12 +682,10 @@
         private System.Windows.Forms.TabPage tabPage_workerManagement;
         private Guna.UI2.WinForms.Guna2TabControl tabControl_typeWorker;
         private System.Windows.Forms.TabPage tabPage_keepWorker;
-        private Guna.UI2.WinForms.Guna2Button button_removeKeepWorker;
         private Guna.UI2.WinForms.Guna2Button button_updateKeepWorker;
         private Guna.UI2.WinForms.Guna2Button button_resetKeep;
         private Guna.UI2.WinForms.Guna2Button button_addKeepWorker;
         private System.Windows.Forms.TabPage tabPage_fixWorker;
-        private Guna.UI2.WinForms.Guna2Button button_removeFixWorker;
         private Guna.UI2.WinForms.Guna2Button button_updateFixWorker;
         private Guna.UI2.WinForms.Guna2Button button_resetFix;
         private Guna.UI2.WinForms.Guna2Button button_addFixWorker;
@@ -694,5 +694,7 @@
         public System.Windows.Forms.DataGridView dataGridView_listKeepWorker;
         public System.Windows.Forms.DataGridView dataGridView_listFixWorker;
         private Guna.UI2.WinForms.Guna2Button button_reset;
+        private Guna.UI2.WinForms.Guna2Button button_payRollfix;
+        private Guna.UI2.WinForms.Guna2Button button_payrollkeep;
     }
 }

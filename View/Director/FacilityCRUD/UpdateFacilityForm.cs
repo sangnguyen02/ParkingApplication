@@ -21,53 +21,48 @@ namespace FinalWindow.View.Director.FacilityCRUD
             InitializeComponent();
         }
 
-        private void button_selectFacility_Click(object sender, EventArgs e)
-        {
-            ListFacilityForm listFacilityForm = new ListFacilityForm();
-            listFacilityForm.Show();
-            this.Hide();
-        }
+        
 
         private void button_updateFacility_Click(object sender, EventArgs e)
         {
             try
             {
+                if(comboBox_facilityAddress.SelectedItem == null || comboBox_Manager.SelectedItem == null)
+                {
+                    MessageBox.Show("Please type all information to update.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
                 DatabaseContext context = new DatabaseContext();
-                try
-                {
+                var manager = context.Users.OfType<Model.Manager>().Where(t => t.cardID == comboBox_Manager.SelectedValue.ToString()).FirstOrDefault();
+                manager.facilityID = (int)comboBox_facilityAddress.SelectedValue;
+                
+                context.SaveChanges();
+                MessageBox.Show("Update successfully", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Facility facility = context.Facilities.Where(u => u.address == textBox_facilityAddress.Text).FirstOrDefault();
-
-                    if (facility == null)
-                    {
-                        textBox_facilityAddress.Text = temp;
-
-
-                        MessageBox.Show("Don't exist this facility");
-
-                    }
-                    else
-                    {
-                        facility.address = textBox_facilityAddress.Text;
-                        facility.quatityFix = Convert.ToInt32(textBox_quantityFix.Text);
-                        facility.quantityKeep = Convert.ToInt32(textBox_quantityFix.Text);    
-                        
-
-                        context.SaveChanges();
-                        MessageBox.Show("Update successfully !!!");
-                    }
-
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Cannot update !!");
-                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Update fail");
+                MessageBox.Show(ex.Message);
             }
+        }
+
+        private void UpdateFacilityForm_Load(object sender, EventArgs e)
+        {
+            DatabaseContext context = new DatabaseContext();
+            
+
+            comboBox_facilityAddress.DataSource = context.Facilities.ToList();
+            comboBox_facilityAddress.DisplayMember = "address";
+            comboBox_facilityAddress.ValueMember = "ID";
+
+
+            comboBox_Manager.DataSource = context.Users.OfType<Model.Manager>().ToList();
+            comboBox_Manager.DisplayMember = "firstName";
+            comboBox_Manager.ValueMember = "cardID";
+            comboBox_Manager.SelectedIndex = -1;
+
+
         }
     }
 }

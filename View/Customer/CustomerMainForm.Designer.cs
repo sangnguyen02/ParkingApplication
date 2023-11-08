@@ -30,6 +30,7 @@
         {
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
             this.tabPage_profile = new System.Windows.Forms.TabPage();
+            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label_birthDate = new System.Windows.Forms.Label();
             this.label_address = new System.Windows.Forms.Label();
@@ -51,11 +52,14 @@
             this.button_editInformation = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage_booking = new System.Windows.Forms.TabPage();
             this.tabPage_feedBack = new System.Windows.Forms.TabPage();
-            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button_loanContract = new Guna.UI2.WinForms.Guna2Button();
+            this.button_keepContract = new Guna.UI2.WinForms.Guna2Button();
             this.guna2TabControl1.SuspendLayout();
             this.tabPage_profile.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_profile)).BeginInit();
+            this.tabPage_booking.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2TabControl1
@@ -103,6 +107,22 @@
             this.tabPage_profile.TabIndex = 0;
             this.tabPage_profile.Text = "Profile";
             this.tabPage_profile.Click += new System.EventHandler(this.tabPage_profile_Click);
+            // 
+            // button_reset
+            // 
+            this.button_reset.BorderRadius = 20;
+            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reset.ForeColor = System.Drawing.Color.White;
+            this.button_reset.Location = new System.Drawing.Point(6, 549);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(95, 34);
+            this.button_reset.TabIndex = 3;
+            this.button_reset.Text = "Reset";
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // guna2GroupBox1
             // 
@@ -337,6 +357,9 @@
             // 
             // tabPage_booking
             // 
+            this.tabPage_booking.Controls.Add(this.button_keepContract);
+            this.tabPage_booking.Controls.Add(this.button_loanContract);
+            this.tabPage_booking.Controls.Add(this.label9);
             this.tabPage_booking.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold);
             this.tabPage_booking.Location = new System.Drawing.Point(184, 4);
             this.tabPage_booking.Name = "tabPage_booking";
@@ -356,21 +379,42 @@
             this.tabPage_feedBack.Text = "Feedback";
             this.tabPage_feedBack.UseVisualStyleBackColor = true;
             // 
-            // button_reset
+            // label9
             // 
-            this.button_reset.BorderRadius = 20;
-            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(6, 549);
-            this.button_reset.Name = "button_reset";
-            this.button_reset.Size = new System.Drawing.Size(95, 34);
-            this.button_reset.TabIndex = 3;
-            this.button_reset.Text = "Reset";
-            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(180, 93);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(59, 23);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "label9";
+            // 
+            // button_loanContract
+            // 
+            this.button_loanContract.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_loanContract.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_loanContract.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_loanContract.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_loanContract.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_loanContract.ForeColor = System.Drawing.Color.White;
+            this.button_loanContract.Location = new System.Drawing.Point(182, 176);
+            this.button_loanContract.Name = "button_loanContract";
+            this.button_loanContract.Size = new System.Drawing.Size(180, 45);
+            this.button_loanContract.TabIndex = 1;
+            this.button_loanContract.Text = "loan vehicle service";
+            // 
+            // button_keepContract
+            // 
+            this.button_keepContract.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_keepContract.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_keepContract.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_keepContract.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_keepContract.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_keepContract.ForeColor = System.Drawing.Color.White;
+            this.button_keepContract.Location = new System.Drawing.Point(184, 256);
+            this.button_keepContract.Name = "button_keepContract";
+            this.button_keepContract.Size = new System.Drawing.Size(180, 45);
+            this.button_keepContract.TabIndex = 2;
+            this.button_keepContract.Text = "keep vehicle service";
             // 
             // CustomerMainForm
             // 
@@ -388,6 +432,8 @@
             this.guna2GroupBox1.ResumeLayout(false);
             this.guna2GroupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_profile)).EndInit();
+            this.tabPage_booking.ResumeLayout(false);
+            this.tabPage_booking.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -418,5 +464,8 @@
         public System.Windows.Forms.Label label_firstName;
         public Guna.UI2.WinForms.Guna2CirclePictureBox pictureBox_profile;
         private Guna.UI2.WinForms.Guna2Button button_reset;
+        private Guna.UI2.WinForms.Guna2Button button_keepContract;
+        private Guna.UI2.WinForms.Guna2Button button_loanContract;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -21,46 +21,44 @@ namespace FinalWindow.View.Director.FacilityCRUD
 
         private void button_addFacility_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBox_facilityAddress.Text) || comboBox_Manager.SelectedItem == null)
+            {
+                MessageBox.Show("Please type all information to add.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
             try
             {
                 DatabaseContext db = new DatabaseContext();
-                if (string.IsNullOrEmpty(textBox_facilityAddress.Text) ||
-                    string.IsNullOrEmpty(textBox_quantityFix.Text) ||
-                    string.IsNullOrEmpty(textBox_quantityKeep.Text))
-
-                {
-                    MessageBox.Show("Please enter all information");
-                    return;
-                }
-
-
-
 
                 var facility = new Facility
                 {
                     address = textBox_facilityAddress.Text,
-                    quatityFix = Convert.ToInt32(textBox_quantityFix.Text),
-                    quantityKeep = Convert.ToInt32(textBox_quantityKeep.Text)
-
+                    quantityKeep = 0,
+                    quatityFix = 0
                 };
-                try
-                {
-                    db.Facilities.Add(facility);
-                    db.SaveChanges();
-                    MessageBox.Show("Add successfully.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception ex)
-                { MessageBox.Show(ex.InnerException.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                db.Facilities.Add(facility);
+                MessageBox.Show("Add Successfully", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                db.SaveChanges();
+
+                string value = comboBox_Manager.SelectedValue.ToString();
+
+                var manager = db.Users.OfType<Model.Manager>().Where(t => t.cardID == value).FirstOrDefault();
+                var facilityAddress = db.Facilities.Where(t => t.address == textBox_facilityAddress.Text).FirstOrDefault();
+                manager.facilityID = facilityAddress.ID;
+                db.SaveChanges();
             }
             catch (Exception ex)
-            { MessageBox.Show(ex.InnerException.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
 
         private void AddFacilityForm_Load(object sender, EventArgs e)
         {
-
+            DatabaseContext context = new DatabaseContext();    
+            comboBox_Manager.DataSource = context.Users.OfType<Model.Manager>().Where(t=>t.facilityID == null).ToList();
+            comboBox_Manager.DisplayMember = "firstName";
+            comboBox_Manager.ValueMember = "cardID";
+            comboBox_Manager.SelectedIndex = -1;
+            
         }
-
-      
     }
 }

@@ -23,6 +23,7 @@ namespace FinalWindow.Model
         public virtual ICollection<FixWorker> FixWorkers { get; set; }
         public virtual ICollection<KeepWorker> KeepWorkers { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
+        public virtual ICollection<Contract> Contracts { get; set; }
 
     }
 }

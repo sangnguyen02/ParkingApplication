@@ -41,7 +41,7 @@ namespace FinalWindow.View.Director
                     string.IsNullOrEmpty(textBox_phone.Text) || 
                     string.IsNullOrEmpty(textBox_email.Text) || 
                     string.IsNullOrEmpty(textBox_address.Text) || 
-                    (comboBox_gender.SelectedItem == null))
+                    (comboBox_salaryrRole.SelectedItem == null))
                 {
                     MessageBox.Show("Please enter all information");
                     return;
@@ -113,19 +113,48 @@ namespace FinalWindow.View.Director
                 var checkcardIDman = db.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
                 var checkcardIDfix = db.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
                 var checkcardIDkeep = db.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                var checkusername = db.Users.Where(t => t.username == textBox_username.Text).Count();
+                var checkphone = db.Users.Where(t => t.phone == textBox_phone.Text).Count();
+                var checkemail = db.Users.Where(t => t.email == textBox_email.Text).Count();
 
-                if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
+                if (checkusername > 0)
                 {
-                    MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Username has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkphone > 0)
+                {
+                    MessageBox.Show("Phone has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkemail > 0)
+                {
+                    MessageBox.Show("Email has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
 
-                
+                if (checkcardIDman > 0)
+                {
+                    MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkcardIDfix > 0)
+                {
+                    MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (checkcardIDkeep > 0)
+                {
+                    MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+
+
                 var manager = new Model.Manager
                 {
                     cardID = textBox_cardID.Text,
-                    facilityID = Convert.ToInt32(comboBox_facilityID.SelectedValue.ToString()),
                     username = textBox_username.Text,
                     password = textBox_password.Text,
                     firstName = textBox_firstName.Text,
@@ -137,6 +166,7 @@ namespace FinalWindow.View.Director
                     birthday = birthday_picker.Value.Date,
                     picture = converterDemo(pictureBox_image.Image),
                     coefficients = 1,
+                    active = true,
                     salaryID = (int)comboBox_salaryrRole.SelectedValue
                 };
                 try
@@ -178,10 +208,7 @@ namespace FinalWindow.View.Director
         private void AddManagerForm_Load(object sender, EventArgs e)
         {
             DatabaseContext context = new DatabaseContext();
-            comboBox_facilityID.DataSource = context.Facilities.ToList();
-            comboBox_facilityID.DisplayMember = "address";
-            comboBox_facilityID.ValueMember = "ID";
-            comboBox_facilityID.SelectedItem = null;
+            
 
             comboBox_salaryrRole.DataSource = context.Salaries.ToList();
             comboBox_salaryrRole.DisplayMember = "role";

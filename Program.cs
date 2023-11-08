@@ -21,9 +21,9 @@ namespace FinalWindow
             Application.SetCompatibleTextRenderingDefault(false);
            
 
-            Application.Run(new LoginForm());
+            //Application.Run(new LoginForm());
             //Application.Run(new ShiftWorkForm());
-            //Application.Run(new UpdateManagerForm());
+            Application.Run(new LoginForm());
         }
     }
 }

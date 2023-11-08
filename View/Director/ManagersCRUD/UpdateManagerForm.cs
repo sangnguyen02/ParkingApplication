@@ -65,6 +65,41 @@ namespace FinalWindow.View.Director
                     var checkcardIDman = context.Users.OfType<Model.Manager>().Where(t => t.cardID == textBox_cardID.Text).Count();
                     var checkcardIDfix = context.Users.OfType<Model.FixWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
                     var checkcardIDkeep = context.Users.OfType<Model.KeepWorker>().Where(t => t.cardID == textBox_cardID.Text).Count();
+                    var checkusername = context.Users.Where(t => t.username == textBox_username.Text).Count();
+                    var checkphone = context.Users.Where(t => t.phone == textBox_phone.Text).Count();
+                    var checkemail = context.Users.Where(t => t.email == textBox_email.Text).Count();
+
+                    if (checkusername > 0)
+                    {
+                        MessageBox.Show("Username has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (checkphone > 0)
+                    {
+                        MessageBox.Show("Phone has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (checkemail > 0)
+                    {
+                        MessageBox.Show("Email has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (checkcardIDman > 0)
+                    {
+                        MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (checkcardIDfix > 0)
+                    {
+                        MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    if (checkcardIDkeep > 0)
+                    {
+                        MessageBox.Show("Card ID has already existed.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
 
                     if (manager == null)
                     {
@@ -74,13 +109,9 @@ namespace FinalWindow.View.Director
                         MessageBox.Show("Don't exist this manager");
 
                     }
-                    else if (checkcardIDman > 0 && checkcardIDfix > 0 && checkcardIDkeep > 0)
-                    {
-                        MessageBox.Show("Card ID already exist.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return;
-                    }
                     else
                     {
+                        manager.cardID = textBox_cardID.Text;
                         manager.username = textBox_username.Text;
                         manager.password = textBox_password.Text;
                         manager.picture = UpdateManagerForm.converterDemo(pictureBox_image.Image);
@@ -94,6 +125,15 @@ namespace FinalWindow.View.Director
                         manager.address = textBox_address.Text;
                         manager.coefficients = float.Parse(textBox_CoE.Text);
                         manager.salaryID = (int?)comboBox_salaryrRole.SelectedValue;
+                        if(checkBox_status.Checked)
+                        {
+                            manager.active = true;
+                        }
+                        else
+                        {
+                            manager.active = false;
+                        }
+                       
                         
 
                         context.SaveChanges();
@@ -112,5 +152,7 @@ namespace FinalWindow.View.Director
                 MessageBox.Show("Update fail");
             }
         }
+
+       
     }
 }

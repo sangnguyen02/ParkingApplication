@@ -11,6 +11,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -36,7 +37,7 @@ namespace FinalWindow
                 var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                 using (var context = new DatabaseContext())
                 {
-                    var keeperData = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID)
+                    var keeperData = context.Users.OfType<KeepWorker>().Where(t => t.facilityID == manager.facilityID && t.active == true)
                         .Select(u => new
                         {
                             CardID = u.cardID,
@@ -65,7 +66,7 @@ namespace FinalWindow
                 var manager = context1.Users.OfType<Model.Manager>().Where(t => t.ID == ManagerMainForm.ManID).FirstOrDefault();
                 using (var context = new DatabaseContext())
                 {
-                    var fixerData = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID)
+                    var fixerData = context.Users.OfType<FixWorker>().Where(t => t.facilityID == manager.facilityID && t.active == true)
                         // .Where(u => u.cardID)
                         .Select(u => new
                         {
@@ -248,6 +249,18 @@ namespace FinalWindow
         private void button_reset_Click(object sender, EventArgs e)
         {
             loadProfile();
+        }
+
+        private void button_payRollfix_Click(object sender, EventArgs e)
+        {
+            PayRollWorkerForm payRollWorkerForm = new PayRollWorkerForm();
+            payRollWorkerForm.Show();
+        }
+
+        private void button_payrollkeep_Click(object sender, EventArgs e)
+        {
+            PayRollWorkerForm payRollWorkerForm = new PayRollWorkerForm();
+            payRollWorkerForm.Show();
         }
     }
 }

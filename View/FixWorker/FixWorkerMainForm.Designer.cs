@@ -47,9 +47,9 @@
             this.pictureBox_profile = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.button_editInformation = new Guna.UI2.WinForms.Guna2Button();
             this.tabPage_profile = new System.Windows.Forms.TabPage();
+            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.guna2TabControl1 = new Guna.UI2.WinForms.Guna2TabControl();
-            this.button_reset = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_profile)).BeginInit();
             this.tabPage_profile.SuspendLayout();
             this.guna2GroupBox1.SuspendLayout();
@@ -271,6 +271,22 @@
             this.tabPage_profile.TabIndex = 0;
             this.tabPage_profile.Text = "Profile";
             // 
+            // button_reset
+            // 
+            this.button_reset.BorderRadius = 20;
+            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_reset.ForeColor = System.Drawing.Color.White;
+            this.button_reset.Location = new System.Drawing.Point(6, 552);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(95, 34);
+            this.button_reset.TabIndex = 5;
+            this.button_reset.Text = "Reset";
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
@@ -329,22 +345,6 @@
             this.guna2TabControl1.TabButtonSize = new System.Drawing.Size(180, 40);
             this.guna2TabControl1.TabIndex = 3;
             this.guna2TabControl1.TabMenuBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(57)))));
-            // 
-            // button_reset
-            // 
-            this.button_reset.BorderRadius = 20;
-            this.button_reset.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.button_reset.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.button_reset.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.button_reset.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_reset.ForeColor = System.Drawing.Color.White;
-            this.button_reset.Location = new System.Drawing.Point(6, 552);
-            this.button_reset.Name = "button_reset";
-            this.button_reset.Size = new System.Drawing.Size(95, 34);
-            this.button_reset.TabIndex = 5;
-            this.button_reset.Text = "Reset";
-            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
             // 
             // FixWorkerMainForm
             // 

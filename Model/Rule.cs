@@ -17,7 +17,5 @@ namespace FinalWindow.Model
         public string nameContract { get; set; }
 
         public string description { get; set; }
-
-        public virtual ICollection<Contract> Contracts { get; set; }
     }
 }

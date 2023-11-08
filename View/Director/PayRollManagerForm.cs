@@ -23,8 +23,12 @@ namespace FinalWindow.View.Director
         {
             loadFacility();
             DataGridViewImageColumn picCol = new DataGridViewImageColumn();
-            picCol = (DataGridViewImageColumn)dataGridView_listManager.Columns[3];
-            picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            if ((DataGridViewImageColumn)dataGridView_listManager.Columns[3] != null)
+            {
+                picCol = (DataGridViewImageColumn)dataGridView_listManager.Columns[3];
+                picCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            }
+            
 
         }
 
@@ -72,12 +76,14 @@ namespace FinalWindow.View.Director
 
         private void dataGridView_listManager_Click(object sender, EventArgs e)
         {
-            CalculateSalaryForm calculateSalaryForm = new CalculateSalaryForm();
+            CalculateManagerSalaryForm calculateSalaryForm = new CalculateManagerSalaryForm();
             
             
             if(dataGridView_listManager.CurrentRow.Cells["SalaryID"].Value != null)
             {
                 int value = (int)dataGridView_listManager.CurrentRow.Cells["SalaryID"].Value;
+                string firstName = dataGridView_listManager.CurrentRow.Cells["FirstName"].Value.ToString();
+                string cardID = dataGridView_listManager.CurrentRow.Cells["CardID"].Value.ToString();
                 using (DatabaseContext context = new DatabaseContext())
                 {
                     var salary = context.Salaries.Where(t => t.salaryID == value).FirstOrDefault();
@@ -87,10 +93,13 @@ namespace FinalWindow.View.Director
                     {
                         float? totalSalary = salary.BasicSalary * manager.coefficients;
                         manager.totalSalary = totalSalary;
+                        
                         context.SaveChanges();
 
-                        // Update the DataGridView with the updated total salary
+                        
                         calculateSalaryForm.label_totalSalary.Text = totalSalary.ToString();
+                        calculateSalaryForm.label_manCardID.Text = cardID;
+                        calculateSalaryForm.label_FirstName.Text = firstName;
 
                     }
                 }
@@ -118,6 +127,7 @@ namespace FinalWindow.View.Director
                                 LastName = m.lastName,
                                 Picture = m.picture,
                                 TotalSalary = m.totalSalary,
+                                SalaryID = m.salaryID,
                             })
                             .ToList();
 

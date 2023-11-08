@@ -41,7 +41,7 @@ namespace FinalWindow
             {
                 using (var context = new DatabaseContext())
                 {
-                    var managerData = context.Users.OfType<Manager>()
+                    var managerData = context.Users.OfType<Manager>().Where(t=>t.active == true)
                        // .Where(u => u.cardID)
                         .Select(u => new
                         {
@@ -66,56 +66,7 @@ namespace FinalWindow
             
         }
 
-        private void tabControl_director_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-            //using (var context = new DatabaseContext())
-            //{
-            //    var managerData = context.Users
-            //        .Where(u => u is Manager)
-            //        .Select(u => new
-            //        {
-            //            FisrtName = u.firstName,
-            //            LastName = u.lastName,
-            //            Gender = u.gender,
-            //            Phone = u.phone,
-            //            Birthday = u.birthday
-
-            //        })
-            //        .ToList();
-
-
-
-            //    dataGridView_listManager.DataSource = managerData;
-            //}
-        }
-        //void loadTime()
-        //{
-        //    try
-        //    {
-        //        using (var context = new DatabaseContext())
-        //        {
-        //            var shiftData = context.Shifts
-        //                // .Where(u => u.cardID)
-        //                .Select(u => new
-        //                {
-        //                    StartTime = u.startTime,
-        //                    EndTime = u.endTime,
-        //                    QuantiTyFix = u.quantityFix,
-        //                    QuantityKeep = u.quantityKeep
-
-
-        //                })
-        //                .ToList();
-
-
-
-        //            dataGridView_listShift.DataSource = shiftData;
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    { MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
-        //}
+       
 
         void loadProfile()
         {

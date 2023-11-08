@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddManagerForm));
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.comboBox_facilityID = new Guna.UI2.WinForms.Guna2ComboBox();
             this.birthday_picker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             this.guna2CirclePictureBox6 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.textBox_cardID = new Guna.UI2.WinForms.Guna2TextBox();
@@ -65,7 +64,7 @@
             // 
             this.guna2GroupBox1.BorderColor = System.Drawing.SystemColors.ButtonShadow;
             this.guna2GroupBox1.BorderRadius = 20;
-            this.guna2GroupBox1.Controls.Add(this.comboBox_facilityID);
+            this.guna2GroupBox1.Controls.Add(this.comboBox_salaryrRole);
             this.guna2GroupBox1.Controls.Add(this.birthday_picker);
             this.guna2GroupBox1.Controls.Add(this.guna2CirclePictureBox6);
             this.guna2GroupBox1.Controls.Add(this.textBox_cardID);
@@ -88,22 +87,6 @@
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.Size = new System.Drawing.Size(559, 448);
             this.guna2GroupBox1.TabIndex = 28;
-            // 
-            // comboBox_facilityID
-            // 
-            this.comboBox_facilityID.BackColor = System.Drawing.Color.Transparent;
-            this.comboBox_facilityID.BorderRadius = 20;
-            this.comboBox_facilityID.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBox_facilityID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox_facilityID.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_facilityID.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.comboBox_facilityID.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_facilityID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.comboBox_facilityID.ItemHeight = 30;
-            this.comboBox_facilityID.Location = new System.Drawing.Point(320, 23);
-            this.comboBox_facilityID.Name = "comboBox_facilityID";
-            this.comboBox_facilityID.Size = new System.Drawing.Size(201, 36);
-            this.comboBox_facilityID.TabIndex = 41;
             // 
             // birthday_picker
             // 
@@ -386,9 +369,9 @@
             this.button_add.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.button_add.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_add.ForeColor = System.Drawing.Color.White;
-            this.button_add.Location = new System.Drawing.Point(396, 665);
+            this.button_add.Location = new System.Drawing.Point(83, 665);
             this.button_add.Name = "button_add";
-            this.button_add.Size = new System.Drawing.Size(246, 45);
+            this.button_add.Size = new System.Drawing.Size(559, 45);
             this.button_add.TabIndex = 29;
             this.button_add.Text = "Add";
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
@@ -469,10 +452,10 @@
             this.comboBox_salaryrRole.Items.AddRange(new object[] {
             "Male",
             "Female"});
-            this.comboBox_salaryrRole.Location = new System.Drawing.Point(127, 665);
+            this.comboBox_salaryrRole.Location = new System.Drawing.Point(313, 23);
             this.comboBox_salaryrRole.MaxDropDownItems = 2;
             this.comboBox_salaryrRole.Name = "comboBox_salaryrRole";
-            this.comboBox_salaryrRole.Size = new System.Drawing.Size(191, 36);
+            this.comboBox_salaryrRole.Size = new System.Drawing.Size(208, 36);
             this.comboBox_salaryrRole.TabIndex = 45;
             // 
             // AddManagerForm
@@ -481,7 +464,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(210)))), ((int)(((byte)(231)))));
             this.ClientSize = new System.Drawing.Size(722, 763);
-            this.Controls.Add(this.comboBox_salaryrRole);
             this.Controls.Add(this.textBox_username);
             this.Controls.Add(this.textBox_password);
             this.Controls.Add(this.pictureBox_image);
@@ -527,7 +509,6 @@
         private Guna.UI2.WinForms.Guna2TextBox textBox_username;
         private Guna.UI2.WinForms.Guna2TextBox textBox_password;
         private Guna.UI2.WinForms.Guna2DateTimePicker birthday_picker;
-        private Guna.UI2.WinForms.Guna2ComboBox comboBox_facilityID;
         public Guna.UI2.WinForms.Guna2ComboBox comboBox_salaryrRole;
     }
 }
